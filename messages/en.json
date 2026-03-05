@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "about": "About Department",
+    "news": "News",
+    "documents": "Documents",
+    "services": "Services",
+    "contacts": "Contacts",
+    "skipToMain": "Skip to main content"
+  },
+  "home": {
+    "title": "Department of Property and Land Relations",
+    "subtitle": "Yakutsk City District Administration. Management of municipal property and land plots.",
+    "aboutButton": "About Department",
+    "contactsButton": "Contacts",
+    "sections": "Main Sections",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "about": "About Department",
+    "quickLinks": "Quick Links",
+    "contacts": "Contacts",
+    "workingHours": "Working hours: Mon-Fri 09:00-18:00",
+    "copyright": "Yakutsk City District Administration. All rights reserved."
+  }
+}
