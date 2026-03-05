@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { Search } from "./search";
 
 export function Header() {
   return (
@@ -56,15 +57,19 @@ export function Header() {
               >
                 Контакты
               </Link>
+              <Search />
             </nav>
 
             {/* Mobile menu button */}
-            <button
-              className="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-md text-gray-700 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary-light"
-              aria-label="Открыть меню"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
+            <div className="flex items-center gap-2 md:hidden">
+              <Search />
+              <button
+                className="inline-flex items-center justify-center h-11 w-11 rounded-md text-gray-700 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary-light"
+                aria-label="Открыть меню"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
