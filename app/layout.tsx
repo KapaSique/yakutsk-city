@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     template: "%s | ДИиЗО Якутск"
   },
   description: "Официальный сайт Департамента имущественных и земельных отношений Окружной администрации города Якутска",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

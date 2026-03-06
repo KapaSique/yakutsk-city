@@ -61,7 +61,23 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
+                <a href="mailto:dizo@yakadm.ru" className="hover:text-white transition-colors">
+                  dizo@yakadm.ru
+                </a>
+              </div>
+              <div className="text-sm">
                 <span>Режим работы: Пн-Пт 09:00-18:00</span>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <a href="https://vk.com/dizo_ykt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-sm">
+                  ВКонтакте
+                </a>
+                <a href="https://t.me/dizo_ykt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-sm">
+                  Telegram
+                </a>
+                <a href="https://ok.ru/group/70000000826573" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-sm">
+                  OK
+                </a>
               </div>
             </div>
           </div>
