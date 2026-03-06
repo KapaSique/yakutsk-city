@@ -9,18 +9,18 @@ export function Header() {
       {/* Skip to main content link for accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-primary focus:text-white focus:rounded-md focus:ring-3 focus:ring-primary-light"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-cyan-600 focus:text-white focus:rounded-md focus:ring-3 focus:ring-cyan-400"
       >
         Перейти к основному содержанию
       </a>
 
-      <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm">
+      <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
+              className="flex items-center gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 rounded-md"
             >
               <Image
                 src="/logo.png"
@@ -31,10 +31,10 @@ export function Header() {
                 priority
               />
               <div className="hidden md:block">
-                <div className="text-base font-semibold text-gray-900 leading-tight">
+                <div className="text-base font-semibold text-slate-900 leading-tight">
                   Департамент имущественных
                 </div>
-                <div className="text-sm text-gray-600 leading-tight">
+                <div className="text-sm text-slate-600 leading-tight">
                   и земельных отношений
                 </div>
               </div>
@@ -44,25 +44,25 @@ export function Header() {
             <nav className="hidden md:flex items-center gap-8" aria-label="Основная навигация">
               <Link
                 href="/about"
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-3 py-2"
+                className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
                 О департаменте
               </Link>
               <Link
                 href="/news"
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-3 py-2"
+                className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
                 Новости
               </Link>
               <Link
                 href="/documents"
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-3 py-2"
+                className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
                 Документы
               </Link>
               <Link
                 href="/contacts"
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-3 py-2"
+                className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
                 Контакты
               </Link>
@@ -73,7 +73,7 @@ export function Header() {
             <div className="flex items-center gap-2 md:hidden">
               <Search />
               <button
-                className="inline-flex items-center justify-center h-10 w-10 rounded-md text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="inline-flex items-center justify-center h-10 w-10 rounded-md text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
                 aria-label="Открыть меню"
               >
                 <Menu className="h-5 w-5" />
