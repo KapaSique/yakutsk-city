@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { Inter, Space_Grotesk } from "next/font/google";
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
   display: 'swap',
