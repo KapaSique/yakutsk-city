@@ -158,6 +158,240 @@ export default function ServicesPage() {
           </CardContent>
         </Card>
 
+        {/* Service 2: Land Plots */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Предоставление земельных участков</CardTitle>
+            <CardDescription>
+              Предоставление земельных участков из муниципальной собственности на аукционах
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="prose max-w-none">
+              <p className="text-gray-700 leading-relaxed">
+                Департамент имущественных и земельных отношений осуществляет предоставление земельных участков,
+                находящихся в муниципальной собственности городского округа «город Якутск», или земельных участков,
+                государственная собственность на которые не разграничена, для строительства, ведения садоводства,
+                огородничества, индивидуального жилищного строительства и иных целей на торгах (аукционах).
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4 my-6">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                  <Clock className="w-6 h-6 text-[#1E40AF] mb-2" />
+                  <p className="text-sm font-semibold text-gray-900">Срок предоставления</p>
+                  <p className="text-sm text-gray-600 mt-1">45 рабочих дней</p>
+                </div>
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                  <Wallet className="w-6 h-6 text-[#1E40AF] mb-2" />
+                  <p className="text-sm font-semibold text-gray-900">Стоимость</p>
+                  <p className="text-sm text-gray-600 mt-1">По результатам аукциона</p>
+                </div>
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                  <FileText className="w-6 h-6 text-[#1E40AF] mb-2" />
+                  <p className="text-sm font-semibold text-gray-900">Результат</p>
+                  <p className="text-sm text-gray-600 mt-1">Договор купли-продажи или аренды</p>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Порядок получения услуги</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">1</div>
+                  <div>
+                    <p className="font-medium text-gray-900">Выбор земельного участка</p>
+                    <p className="text-sm text-gray-600 mt-1">Ознакомьтесь с перечнем земельных участков, выставленных на торги, на официальном сайте или в Департаменте</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">2</div>
+                  <div>
+                    <p className="font-medium text-gray-900">Подача заявки на участие в аукционе</p>
+                    <p className="text-sm text-gray-600 mt-1">Подайте заявку с приложением необходимых документов и внесите задаток (20% от начальной цены)</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">3</div>
+                  <div>
+                    <p className="font-medium text-gray-900">Участие в аукционе</p>
+                    <p className="text-sm text-gray-600 mt-1">Примите участие в торгах в установленные дату и время. Аукцион проводится в открытой форме</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">4</div>
+                  <div>
+                    <p className="font-medium text-gray-900">Заключение договора</p>
+                    <p className="text-sm text-gray-600 mt-1">При победе в аукционе заключите договор купли-продажи или аренды в течение 30 дней</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">5</div>
+                  <div>
+                    <p className="font-medium text-gray-900">Регистрация права</p>
+                    <p className="text-sm text-gray-600 mt-1">Зарегистрируйте право собственности или аренды в Росреестре</p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Необходимые документы</h3>
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <p className="text-sm font-semibold text-gray-900 mb-4">Для физических лиц:</p>
+                <ul className="space-y-3 text-gray-700 mb-6">
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Заявка на участие в аукционе</strong> (по установленной форме)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Копия паспорта</strong> гражданина РФ (все заполненные страницы)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Документ, подтверждающий внесение задатка</strong> (платежное поручение или квитанция)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Доверенность</strong> (если интересы представляет доверенное лицо)</span>
+                  </li>
+                </ul>
+
+                <p className="text-sm font-semibold text-gray-900 mb-4">Для юридических лиц:</p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Заявка на участие в аукционе</strong> (по установленной форме)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Выписка из ЕГРЮЛ</strong> (не старше 30 дней)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Копии учредительных документов</strong> (устав, учредительный договор)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Документ, подтверждающий полномочия</strong> руководителя (приказ о назначении, решение учредителей)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <span><strong>Документ, подтверждающий внесение задатка</strong> (платежное поручение)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-6">
+                <div className="flex gap-3">
+                  <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-sm text-amber-900">
+                    <p className="font-semibold mb-1">Важно:</p>
+                    <p>Задаток должен быть внесен не позднее даты окончания приема заявок. Реквизиты для перечисления задатка указываются в извещении о проведении аукциона. Задаток засчитывается в счет оплаты по договору.</p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Условия участия в аукционе</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>Размер задатка составляет 20% от начальной цены предмета аукциона</li>
+                <li>Шаг аукциона устанавливается в размере 3% от начальной цены</li>
+                <li>Победителем признается участник, предложивший наибольшую цену</li>
+                <li>Договор заключается в течение 30 дней с даты подведения итогов аукциона</li>
+                <li>Оплата по договору производится в течение 10 дней с момента его заключения</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Основания для отказа в допуске к аукциону</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>Непредставление необходимых документов или представление недостоверных сведений</li>
+                <li>Несвоевременное внесение задатка</li>
+                <li>Подача заявки лицом, которое не имеет права быть участником аукциона</li>
+                <li>Наличие сведений о заявителе в реестре недобросовестных участников аукциона</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Часто задаваемые вопросы</h3>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="land-1">
+                  <AccordionTrigger>Где можно посмотреть список участков, выставленных на торги?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Информация о земельных участках, выставленных на торги, публикуется на официальном сайте
+                      Департамента, на портале torgi.gov.ru, а также на информационных стендах в здании Департамента.
+                      Извещения о проведении аукционов публикуются не менее чем за 30 дней до даты проведения торгов.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="land-2">
+                  <AccordionTrigger>Что происходит с задатком при проигрыше на аукционе?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Задаток возвращается участникам аукциона, которые не стали победителями, в течение 5 рабочих
+                      дней со дня подведения итогов аукциона. Возврат осуществляется на банковский счет, указанный
+                      в заявке на участие в аукционе.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="land-3">
+                  <AccordionTrigger>Можно ли получить земельный участок без аукциона?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Без проведения торгов земельные участки предоставляются только в случаях, предусмотренных
+                      Земельным кодексом РФ: для ведения личного подсобного хозяйства, садоводства, огородничества,
+                      индивидуального жилищного строительства (при наличии права на бесплатное предоставление),
+                      а также в иных случаях, установленных законодательством.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="land-4">
+                  <AccordionTrigger>Какие виды разрешенного использования земли существуют?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Виды разрешенного использования определяются в соответствии с правилами землепользования и
+                      застройки городского округа «город Якутск». Основные категории: индивидуальное жилищное
+                      строительство, малоэтажная жилая застройка, коммерческая застройка, производственная
+                      деятельность, сельскохозяйственное использование. Конкретный вид указывается в документации
+                      на аукцион.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Контакты для консультаций</h3>
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 space-y-4">
+                <div>
+                  <p className="font-semibold text-gray-900 mb-2">Отдел образования земельных участков</p>
+                  <div className="space-y-1 text-gray-700">
+                    <p>Телефон: <a href="tel:+74112326479" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 32-64-79</a></p>
+                    <p>Адрес: г. Якутск, ул. Орджоникидзе, 24</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 mb-2">Отдел землеустройства</p>
+                  <div className="space-y-1 text-gray-700">
+                    <p>Телефон: <a href="tel:+74112326478" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 32-64-78</a></p>
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 mb-2">Юридический отдел (земельные вопросы)</p>
+                  <div className="space-y-1 text-gray-700">
+                    <p>Телефон: <a href="tel:+74112326458" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 32-64-58</a></p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 pt-2">Часы приема: Пн-Пт 9:00-18:00 (обед 13:00-14:00)</p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Button asChild className="bg-[#F97316] hover:bg-[#EA580C]">
+                <Link href="/documents">
+                  <Download className="w-4 h-4 mr-2" />
+                  Скачать форму заявки
+                </Link>
+              </Button>
+              <Button asChild variant="secondary">
+                <Link href="/contacts">Контакты департамента</Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* FAQ Section */}
         <div className="mt-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Часто задаваемые вопросы</h2>
