@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { ContactForm } from "@/components/contact-form";
 
 export default function ContactsPage() {
   return (
@@ -186,6 +187,19 @@ export default function ContactsPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Contact Form Section */}
+        <Card className="hover:shadow-lg transition-shadow duration-200 mb-12">
+          <CardHeader>
+            <CardTitle>Форма обратной связи</CardTitle>
+            <CardDescription>
+              Заполните форму ниже, и мы свяжемся с вами в ближайшее время
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ContactForm />
+          </CardContent>
+        </Card>
 
         {/* Map placeholder */}
         <Card className="hover:shadow-lg transition-shadow duration-200">

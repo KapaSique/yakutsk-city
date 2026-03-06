@@ -273,7 +273,245 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Administrative Procedures */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Административные регламенты</CardTitle>
+            <CardDescription>
+              Порядок предоставления муниципальных услуг
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Административный регламент предоставления муниципальной услуги по передаче в аренду имущества
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Утвержден постановлением Окружной администрации от 12.09.2022 № 568-НПА (ред. от 05.12.2025)
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 1.1 МБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Административный регламент по предоставлению земельных участков в собственность и аренду
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Утвержден постановлением Окружной администрации от 28.03.2023 № 189-НПА (ред. от 18.01.2026)
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 1.4 МБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Административный регламент по приватизации муниципального имущества
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Утвержден постановлением Окружной администрации от 07.11.2021 № 672-НПА (ред. от 22.09.2025)
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 892 КБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Reports */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Отчеты и аналитика</CardTitle>
+            <CardDescription>
+              Отчеты о деятельности департамента
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Отчет о деятельности Департамента за 2025 год
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Утвержден приказом Департамента от 25.01.2026 № 08
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 2.1 МБ • Опубликовано: 28.01.2026</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Аналитический отчет по использованию муниципального имущества (IV квартал 2025)
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Подготовлен отделом учета и распоряжения имуществом
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 1.6 МБ • Опубликовано: 15.01.2026</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Статистика предоставления земельных участков за 2025 год
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Сводный отчет по земельным отношениям
+                    </p>
+                    <p className="text-xs text-gray-500">XLSX, 428 КБ • Опубликовано: 20.01.2026</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Forms */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Формы и бланки</CardTitle>
+            <CardDescription>
+              Типовые формы заявлений и документов
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Заявление о предоставлении муниципального имущества в аренду
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Типовая форма для юридических лиц и индивидуальных предпринимателей
+                    </p>
+                    <p className="text-xs text-gray-500">DOCX, 45 КБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Заявление о предоставлении земельного участка в собственность/аренду
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Форма для физических и юридических лиц
+                    </p>
+                    <p className="text-xs text-gray-500">DOCX, 52 КБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Заявление о приватизации муниципального имущества
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Типовая форма с перечнем необходимых документов
+                    </p>
+                    <p className="text-xs text-gray-500">DOCX, 48 КБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Согласие на обработку персональных данных
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Обязательная форма для всех заявителей
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 128 КБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Опись документов, прилагаемых к заявлению
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Универсальная форма для всех видов обращений
+                    </p>
+                    <p className="text-xs text-gray-500">DOCX, 38 КБ</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
+    </>
   );
 }

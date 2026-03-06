@@ -134,14 +134,98 @@ export default function ServicesPage() {
                 <li>Возможность выкупа арендуемого имущества по истечении срока аренды</li>
               </ul>
 
-              <div className="flex gap-4 mt-8">
-                <Button asChild className="bg-[#1E40AF] hover:bg-[#1E40AF]/90">
-                  <Link href="/contacts">Подать заявление</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/documents">
-                    <Download className="w-4 h-4 mr-2" />
-                    Скачать форму заявления
-                  </Link>
-                </Button>
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Основания для отказа</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>Несоответствие заявителя критериям субъекта малого или среднего предпринимательства</li>
+                <li>Предоставление неполного пакета документов или недостоверных сведений</li>
+                <li>Наличие задолженности по налогам и сборам</li>
+                <li>Отсутствие свободного муниципального имущества, соответствующего запросу</li>
+                <li>Нарушение заявителем ранее заключенных договоров аренды муниципального имущества</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Часто задаваемые вопросы</h3>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>Кто может получить имущественную поддержку?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Имущественную поддержку могут получить субъекты малого и среднего предпринимательства,
+                      зарегистрированные на территории городского округа «город Якутск» и включенные в единый
+                      реестр субъектов МСП. Это могут быть как юридические лица, так и индивидуальные предприниматели.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Какие виды имущества можно получить в аренду?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      В аренду предоставляются нежилые помещения, здания, сооружения, находящиеся в муниципальной
+                      собственности и включенные в специальный Перечень. Это могут быть торговые площади, офисные
+                      помещения, производственные здания и другие объекты недвижимости.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>Можно ли продлить договор аренды?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Да, договор аренды может быть продлен на новый срок при условии надлежащего исполнения
+                      арендатором своих обязательств и отсутствия нарушений условий договора. Заявление о продлении
+                      необходимо подать не позднее чем за 3 месяца до окончания срока действия договора.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger>Как рассчитывается арендная плата?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Арендная плата рассчитывается на основании рыночной стоимости объекта, определенной независимым
+                      оценщиком. Для социально значимых видов деятельности могут применяться понижающие коэффициенты
+                      от 0,5 до 0,7 в зависимости от вида деятельности.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                  <AccordionTrigger>Можно ли выкупить арендуемое имущество?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Да, по истечении срока аренды (не менее 5 лет) арендатор имеет преимущественное право на выкуп
+                      арендуемого имущества по рыночной стоимости. Для этого необходимо подать соответствующее заявление
+                      и пройти процедуру оценки имущества.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Контакты для консультаций</h3>
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                <p className="font-semibold text-gray-900 mb-3">Отдел учёта и распоряжения муниципальной собственностью</p>
+                <div className="space-y-2 text-gray-700">
+                  <p>Телефон: <a href="tel:+74112408069" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 40-80-69</a></p>
+                  <p>Адрес: г. Якутск, ул. Орджоникидзе, 24</p>
+                  <p>Часы приема: Пн-Пт 9:00-18:00 (обед 13:00-14:00)</p>
+                </div>
               </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Button asChild className="bg-[#F97316] hover:bg-[#EA580C]">
+                <Link href="/documents">
+                  <Download className="w-4 h-4 mr-2" />
+                  Скачать форму заявления
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/documents">Административные регламенты</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/contacts">Все контакты</Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+    </>
+  );
+}

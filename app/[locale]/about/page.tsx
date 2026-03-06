@@ -1,8 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Users, FileText, Award, Target, CheckCircle2 } from "lucide-react";
+import { Building2, Users, FileText, Award, Target, CheckCircle2, Calendar, Database, Globe, Smartphone, Brain, Shield, TrendingUp } from "lucide-react";
+import { Timeline, TimelineEvent } from "@/components/timeline";
 import { Breadcrumb } from "@/components/breadcrumb";
 
 export default function AboutPage() {
+  const historyEvents: TimelineEvent[] = [
+    {
+      date: "Март 2010",
+      title: "Образование департамента",
+      description: "Создание Департамента имущественных и земельных отношений в результате реформирования системы управления муниципальной собственностью города Якутска. Объединение функций управления имуществом и земельными ресурсами в единую структуру.",
+      icon: Building2,
+    },
+    {
+      date: "Сентябрь 2012",
+      title: "Запуск электронного реестра",
+      description: "Внедрение автоматизированной информационной системы учёта муниципального имущества. Переход на электронный документооборот и создание единой базы данных объектов муниципальной собственности.",
+      icon: Database,
+    },
+    {
+      date: "Январь 2015",
+      title: "Цифровизация земельных услуг",
+      description: "Запуск портала электронных услуг для граждан и организаций. Возможность подачи заявлений на предоставление земельных участков в электронном виде через портал Госуслуг и официальный сайт департамента.",
+      icon: Globe,
+    },
+    {
+      date: "Июнь 2018",
+      title: "Модернизация процессов",
+      description: "Внедрение проектного управления и оптимизация административных процедур. Сокращение сроков предоставления муниципальных услуг на 40% за счёт автоматизации и упрощения процессов согласования.",
+      icon: TrendingUp,
+    },
+    {
+      date: "Апрель 2020",
+      title: "Переход на дистанционный формат",
+      description: "Полный переход на дистанционное обслуживание граждан в период пандемии. Внедрение видеоконсультаций, электронной записи на приём и онлайн-мониторинга статуса заявлений.",
+      icon: Smartphone,
+    },
+    {
+      date: "Ноябрь 2023",
+      title: "Внедрение ИИ-технологий",
+      description: "Запуск системы интеллектуального анализа заявлений с использованием искусственного интеллекта. Автоматическая проверка документов и предварительная оценка заявок сократила время обработки на 60%.",
+      icon: Brain,
+    },
+    {
+      date: "Февраль 2026",
+      title: "Сертификация информационной безопасности",
+      description: "Получение сертификата соответствия требованиям информационной безопасности. Внедрение современных систем защиты данных и обеспечение полной прозрачности операций с муниципальным имуществом.",
+      icon: Shield,
+    },
+  ];
+
   return (
     <>
       <Breadcrumb items={[{ label: "О департаменте" }]} />
@@ -189,7 +235,24 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* History Timeline */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Calendar className="h-5 w-5 text-[#1E40AF]" />
+              История развития департамента
+            </CardTitle>
+            <CardDescription>
+              Ключевые вехи в развитии департамента с 2010 по 2026 год
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="pt-6">
+            <Timeline events={historyEvents} />
+          </CardContent>
+        </Card>
       </div>
     </div>
+    </>
   );
 }
