@@ -1,9 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export default function ContactsPage() {
   return (
-    <div className="py-16">
+    <>
+      <Breadcrumb items={[{ label: "Контакты" }]} />
+      <div className="py-16">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Контакты</h1>
 
@@ -205,5 +208,6 @@ export default function ContactsPage() {
         </Card>
       </div>
     </div>
+    </>
   );
 }
