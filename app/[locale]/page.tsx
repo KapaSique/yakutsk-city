@@ -8,25 +8,35 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-[#EFF6FF] py-24 border-b border-gray-200">
-        <div className="container mx-auto px-4">
+      <section className="relative py-32 border-b border-gray-200 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-cyan-900/85 z-10"></div>
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+            alt="Yakutsk aerial view"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-3">
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+            <div className="mb-4">
+              <span className="text-sm font-medium text-cyan-400 uppercase tracking-wider">
                 Окружная администрация города Якутска
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
               Департамент имущественных и земельных отношений
             </h1>
-            <p className="text-xl text-gray-700 mb-12 leading-relaxed max-w-3xl">
+            <p className="text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl">
               Управление муниципальным имуществом и земельными участками города Якутска
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-[#1E40AF] hover:bg-[#1E40AF]/90">
+              <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white">
                 <Link href="/about">О департаменте</Link>
               </Button>
-              <Button asChild variant="secondary" size="lg">
+              <Button asChild variant="secondary" size="lg" className="bg-white/10 hover:bg-white/20 text-white border-white/30">
                 <Link href="/contacts">Контакты</Link>
               </Button>
             </div>
