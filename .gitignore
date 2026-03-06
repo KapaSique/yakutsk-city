@@ -3,6 +3,9 @@ node_modules
 /.pnp
 .pnp.js
 
+# Reference
+/saveweb2zip-com-yakutskcity-ru
+
 # Testing
 /coverage
 
