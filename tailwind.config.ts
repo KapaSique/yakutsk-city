@@ -15,6 +15,15 @@ const config: Config = {
           dark: "#1E3A8A",
           light: "#3B82F6",
         },
+        secondary: {
+          DEFAULT: "#3B82F6",
+        },
+        cta: {
+          DEFAULT: "#F97316",
+        },
+        background: {
+          DEFAULT: "#EFF6FF",
+        },
         gray: {
           50: "#F9FAFB",
           100: "#F3F4F6",
@@ -28,7 +37,9 @@ const config: Config = {
         info: "#0284C7",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        heading: ["EB Garamond", "serif"],
+        body: ["Lato", "sans-serif"],
+        sans: ["Lato", "sans-serif"],
       },
       spacing: {
         "18": "4.5rem",

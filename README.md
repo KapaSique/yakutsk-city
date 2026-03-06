@@ -9,9 +9,11 @@
 - **Tailwind CSS** - Utility-first CSS фреймворк
 - **shadcn/ui** - Компоненты на базе Radix UI
 - **Lucide React** - Иконки
+- **next-intl** - Интернационализация (ru, sah, en)
 
 ## ✨ Особенности
 
+- ✅ **Мультиязычность** - Поддержка русского, якутского и английского языков
 - ✅ **WCAG 2.1 AA** - Полная доступность для людей с ограниченными возможностями
 - ✅ **SEO оптимизация** - Sitemap, robots.txt, Open Graph метатеги
 - ✅ **Responsive дизайн** - Адаптивная вёрстка для всех устройств
@@ -40,30 +42,45 @@ npm run dev
 ```
 YakutskCity-ru/
 ├── app/                      # Next.js App Router
-│   ├── about/               # Страница "О департаменте"
-│   ├── contacts/            # Страница "Контакты"
-│   ├── documents/           # Страница "Документы"
-│   ├── news/                # Страница "Новости"
-│   ├── services/            # Страница "Услуги"
+│   ├── [locale]/            # Локализованные маршруты
+│   │   ├── about/           # Страница "О департаменте"
+│   │   ├── contacts/        # Страница "Контакты"
+│   │   ├── documents/       # Страница "Документы"
+│   │   ├── news/            # Страница "Новости"
+│   │   ├── services/        # Страница "Услуги"
+│   │   ├── layout.tsx       # Layout с Header/Footer
+│   │   ├── page.tsx         # Главная страница
+│   │   └── not-found.tsx    # 404 страница
 │   ├── layout.tsx           # Корневой layout
-│   ├── page.tsx             # Главная страница
-│   ├── not-found.tsx        # 404 страница
+│   ├── globals.css          # Глобальные стили
 │   ├── robots.ts            # robots.txt
-│   ├── sitemap.ts           # XML sitemap
-│   └── globals.css          # Глобальные стили
+│   └── sitemap.ts           # XML sitemap
 ├── components/              # React компоненты
 │   ├── ui/                  # shadcn/ui компоненты
 │   │   ├── button.tsx
 │   │   ├── card.tsx
 │   │   ├── input.tsx
-│   │   └── label.tsx
+│   │   ├── label.tsx
+│   │   └── skeleton.tsx
 │   ├── header.tsx           # Шапка сайта
-│   └── footer.tsx           # Подвал сайта
+│   ├── footer.tsx           # Подвал сайта
+│   └── search.tsx           # Компонент поиска
+├── messages/                # Переводы для i18n
+│   ├── ru.json              # Русский
+│   ├── sah.json             # Якутский
+│   └── en.json              # Английский
 ├── lib/                     # Утилиты
 │   └── utils.ts             # cn() helper
 ├── public/                  # Статические файлы
+│   ├── favicon.ico          # Иконка сайта
+│   ├── logo.png             # Логотип департамента
+│   └── gerb-rf-png.png      # Герб РФ
+├── i18n.ts                  # Конфигурация next-intl
+├── routing.ts               # Настройки маршрутизации
 ├── tailwind.config.ts       # Tailwind конфигурация
 ├── tsconfig.json            # TypeScript конфигурация
+├── CLAUDE.md                # Руководство для Claude Code
+├── CONTENT_ANALYSIS.md      # Анализ контента
 └── package.json             # Зависимости
 ```
 
@@ -174,14 +191,22 @@ npm run lint     # Проверить код с ESLint
 - [x] Создание всех страниц
 - [x] Accessibility (WCAG 2.1 AA)
 - [x] SEO оптимизация
+- [x] Мультиязычность (next-intl)
+- [x] Добавление контента из оригинального сайта
+- [x] Информация о руководстве и структуре
+- [x] Контакты всех отделов
+- [x] Социальные сети (ВК, Telegram, OK)
 
-### Фаза 2 (В планах)
+### Фаза 2 (В работе) 🚧
+- [x] Favicon и логотип
+- [ ] Переводы на якутский и английский
 - [ ] Интеграция Payload CMS
-- [ ] Мультиязычность (ru, sah, en)
 - [ ] Поиск по сайту (Meilisearch)
 - [ ] Динамические новости
-- [ ] Загрузка документов
+- [ ] Загрузка реальных документов
 - [ ] Карта на странице контактов
+- [ ] Мобильное меню (функционал)
+- [ ] Фотографии сотрудников
 
 ### Фаза 3 (Будущее)
 - [ ] Личный кабинет
@@ -195,7 +220,10 @@ npm run lint     # Проверить код с ESLint
 **Департамент имущественных и земельных отношений**
 - Адрес: 677000, Республика Саха (Якутия), г. Якутск, пр. Ленина, д. 15, офис 612
 - Телефон: 8 (4112) 40-88-09
+- Email: dizo@yakadm.ru
 - ВКонтакте: [vk.com/dizo_ykt](https://vk.com/dizo_ykt)
+- Telegram: [t.me/dizo_ykt](https://t.me/dizo_ykt)
+- Одноклассники: [ok.ru/group/70000000826573](https://ok.ru/group/70000000826573)
 
 ## 📄 Лицензия
 

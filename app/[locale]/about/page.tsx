@@ -33,7 +33,7 @@ export default function AboutPage() {
 
         {/* Contact Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-200">
             <CardHeader>
               <CardTitle>Реквизиты</CardTitle>
             </CardHeader>
@@ -57,15 +57,23 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold text-sm text-gray-600 mb-1">Телефон приёмной</h3>
                 <p className="text-gray-900">
-                  <a href="tel:+74112408809" className="text-primary hover:underline">
+                  <a href="tel:+74112408809" className="text-primary hover:underline transition-colors duration-200">
                     8 (4112) 40-88-09
+                  </a>
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm text-gray-600 mb-1">Электронная почта</h3>
+                <p className="text-gray-900">
+                  <a href="mailto:dizo@yakadm.ru" className="text-primary hover:underline transition-colors duration-200">
+                    dizo@yakadm.ru
                   </a>
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-200">
             <CardHeader>
               <CardTitle>Режим работы</CardTitle>
             </CardHeader>
@@ -91,17 +99,96 @@ export default function AboutPage() {
         </div>
 
         {/* Staff Section */}
-        <Card id="staff">
+        <Card id="staff" className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Руководство департамента</CardTitle>
             <CardDescription>
-              Информация о руководителях и структурных подразделениях
+              Информация о руководителях департамента
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600">
-              Информация о руководстве будет добавлена позже
-            </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-1">
+                    Бурнашев Алексей Алексеевич
+                  </h3>
+                  <p className="text-primary font-medium mb-2">Начальник департамента</p>
+                  <p className="text-gray-600 text-sm">
+                    Приём граждан: каждый понедельник с 17:00 до 19:00<br />
+                    По предварительной записи: <a href="tel:+74112408809" className="text-primary hover:underline">8 (4112) 40-88-09</a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-1">
+                    Друзьянова Лина Бориславовна
+                  </h3>
+                  <p className="text-primary font-medium">Заместитель начальника департамента</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Departments Structure */}
+        <Card className="mt-8 hover:shadow-lg transition-shadow duration-200">
+          <CardHeader>
+            <CardTitle>Структурные подразделения</CardTitle>
+            <CardDescription>
+              Отделы и службы департамента
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 border border-gray-200 rounded-lg">
+                <h3 className="font-semibold mb-2">Отдел учёта и распоряжения муниципальной собственностью</h3>
+                <p className="text-sm text-gray-600">
+                  Начальник: Колодезникова Венера Николаевна<br />
+                  Телефон: <a href="tel:+74112408069" className="text-primary hover:underline">8 (4112) 40-80-69</a>
+                </p>
+              </div>
+
+              <div className="p-4 border border-gray-200 rounded-lg">
+                <h3 className="font-semibold mb-2">Отдел образования земельных участков</h3>
+                <p className="text-sm text-gray-600">
+                  Начальник: Кузьмина Светлана Петровна<br />
+                  Телефон: <a href="tel:+74112326479" className="text-primary hover:underline">8 (4112) 32-64-79</a>
+                </p>
+              </div>
+
+              <div className="p-4 border border-gray-200 rounded-lg">
+                <h3 className="font-semibold mb-2">Отдел информатизации</h3>
+                <p className="text-sm text-gray-600">
+                  Телефон: <a href="tel:+74112408091" className="text-primary hover:underline">8 (4112) 40-80-91</a>
+                </p>
+              </div>
+
+              <div className="p-4 border border-gray-200 rounded-lg">
+                <h3 className="font-semibold mb-2">Отдел землеустройства</h3>
+                <p className="text-sm text-gray-600">
+                  Телефон: <a href="tel:+74112326478" className="text-primary hover:underline">8 (4112) 32-64-78</a>
+                </p>
+              </div>
+
+              <div className="p-4 border border-gray-200 rounded-lg">
+                <h3 className="font-semibold mb-2">Организационный отдел</h3>
+                <p className="text-sm text-gray-600">
+                  Адрес: Октябрьская 20/1<br />
+                  Телефон: <a href="tel:+74112326469" className="text-primary hover:underline">8 (4112) 32-64-69</a>
+                </p>
+              </div>
+
+              <div className="p-4 border border-gray-200 rounded-lg">
+                <h3 className="font-semibold mb-2">Юридический отдел</h3>
+                <p className="text-sm text-gray-600">
+                  Имущественные вопросы: <a href="tel:+74112408098" className="text-primary hover:underline">8 (4112) 40-80-98</a><br />
+                  Земельные вопросы: <a href="tel:+74112326458" className="text-primary hover:underline">8 (4112) 32-64-58</a>
+                </p>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
