@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Users, Building2, Phone } from "lucide-react";
 import Link from "next/link";
+import Stats from "@/components/stats";
 
 export default function Home() {
   return (
@@ -107,6 +108,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Statistics */}
+      <Stats />
 
       {/* Contact Info */}
       <section className="bg-gray-50 py-20 border-t border-gray-200">

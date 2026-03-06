@@ -1,9 +1,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, Users, FileText, Award, Target, CheckCircle2 } from "lucide-react";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export default function AboutPage() {
   return (
-    <div className="py-16">
+    <>
+      <Breadcrumb items={[{ label: "О департаменте" }]} />
+      <div className="py-16">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">О департаменте</h1>
 
@@ -183,3 +186,10 @@ export default function AboutPage() {
                 <div className="text-4xl font-bold text-[#1E40AF] mb-2">98.7%</div>
                 <div className="text-sm text-gray-700 font-medium">Заявлений обработано в срок</div>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
