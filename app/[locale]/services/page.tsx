@@ -12,7 +12,7 @@ export default function ServicesPage() {
       <Breadcrumb items={[{ label: "Муниципальные услуги" }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Муниципальные услуги</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-8">Муниципальные услуги</h1>
 
         {/* Service 1: Property Support for SME */}
         <Card className="mb-8">
@@ -24,7 +24,7 @@ export default function ServicesPage() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-slate-700 leading-relaxed">
                 Департамент имущественных и земельных отношений городского округа «город Якутск» предоставляет
                 имущественную поддержку субъектам малого и среднего предпринимательства в виде передачи в аренду
                 муниципального имущества, включенного в Перечень муниципального имущества, свободного от прав
@@ -32,84 +32,84 @@ export default function ServicesPage() {
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 my-6">
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <Clock className="w-6 h-6 text-[#1E40AF] mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Срок предоставления</p>
-                  <p className="text-sm text-gray-600 mt-1">30 рабочих дней</p>
+                <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-xl border border-cyan-200 shadow-sm">
+                  <Clock className="w-6 h-6 text-cyan-600 mb-2" />
+                  <p className="text-sm font-semibold text-slate-900">Срок предоставления</p>
+                  <p className="text-sm text-slate-600 mt-1">30 рабочих дней</p>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <Wallet className="w-6 h-6 text-[#1E40AF] mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Стоимость</p>
-                  <p className="text-sm text-gray-600 mt-1">Без взимания платы</p>
+                <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-xl border border-emerald-200 shadow-sm">
+                  <Wallet className="w-6 h-6 text-emerald-600 mb-2" />
+                  <p className="text-sm font-semibold text-slate-900">Стоимость</p>
+                  <p className="text-sm text-slate-600 mt-1">Без взимания платы</p>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <FileText className="w-6 h-6 text-[#1E40AF] mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Результат</p>
-                  <p className="text-sm text-gray-600 mt-1">Договор аренды или отказ</p>
+                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-xl border border-indigo-200 shadow-sm">
+                  <FileText className="w-6 h-6 text-indigo-600 mb-2" />
+                  <p className="text-sm font-semibold text-slate-900">Результат</p>
+                  <p className="text-sm text-slate-600 mt-1">Договор аренды или отказ</p>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Порядок получения услуги</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Порядок получения услуги</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">1</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">1</div>
                   <div>
-                    <p className="font-medium text-gray-900">Подготовка документов</p>
-                    <p className="text-sm text-gray-600 mt-1">Соберите необходимый пакет документов согласно перечню ниже</p>
+                    <p className="font-medium text-slate-900">Подготовка документов</p>
+                    <p className="text-sm text-slate-600 mt-1">Соберите необходимый пакет документов согласно перечню ниже</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">2</div>
                   <div>
-                    <p className="font-medium text-gray-900">Подача заявления</p>
-                    <p className="text-sm text-gray-600 mt-1">Подайте заявление лично в Департамент или через МФЦ. Возможна подача через портал Госуслуг</p>
+                    <p className="font-medium text-slate-900">Подача заявления</p>
+                    <p className="text-sm text-slate-600 mt-1">Подайте заявление лично в Департамент или через МФЦ. Возможна подача через портал Госуслуг</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">3</div>
                   <div>
-                    <p className="font-medium text-gray-900">Рассмотрение заявления</p>
-                    <p className="text-sm text-gray-600 mt-1">Департамент проверяет документы и принимает решение в течение 30 рабочих дней</p>
+                    <p className="font-medium text-slate-900">Рассмотрение заявления</p>
+                    <p className="text-sm text-slate-600 mt-1">Департамент проверяет документы и принимает решение в течение 30 рабочих дней</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">4</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">4</div>
                   <div>
-                    <p className="font-medium text-gray-900">Получение результата</p>
-                    <p className="text-sm text-gray-600 mt-1">При положительном решении заключается договор аренды сроком не менее 5 лет</p>
+                    <p className="font-medium text-slate-900">Получение результата</p>
+                    <p className="text-sm text-slate-600 mt-1">При положительном решении заключается договор аренды сроком не менее 5 лет</p>
                   </div>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Необходимые документы</h3>
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <ul className="space-y-3 text-gray-700">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Необходимые документы</h3>
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Заявление</strong> об оказании имущественной поддержки (по установленной форме)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Выписка из ЕГРЮЛ/ЕГРИП</strong> (не старше 30 дней) или свидетельство о государственной регистрации</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Копии учредительных документов</strong> (устав, учредительный договор) - для юридических лиц</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Документы, подтверждающие принадлежность к субъектам МСП:</strong> справка из налогового органа о применяемой системе налогообложения, сведения о среднесписочной численности работников, выписка из реестра МСП</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Копия паспорта</strong> заявителя (для ИП) или руководителя организации</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Бизнес-план</strong> с обоснованием необходимости получения имущества</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Справка об отсутствии задолженности</strong> по налогам и сборам</span>
                   </li>
                 </ul>
@@ -125,8 +125,8 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Условия предоставления</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Условия предоставления</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>Срок договора аренды составляет не менее 5 лет с возможностью продления</li>
                 <li>Заключение договора по результатам торгов или без проведения торгов (для социально значимых видов деятельности)</li>
                 <li>Льготные условия аренды для предприятий, осуществляющих социально значимые виды деятельности</li>
@@ -134,8 +134,8 @@ export default function ServicesPage() {
                 <li>Возможность выкупа арендуемого имущества по истечении срока аренды</li>
               </ul>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Основания для отказа</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Основания для отказа</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>Несоответствие заявителя критериям субъекта малого или среднего предпринимательства</li>
                 <li>Предоставление неполного пакета документов или недостоверных сведений</li>
                 <li>Наличие задолженности по налогам и сборам</li>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
               </ul>
 
               <div className="flex gap-4 mt-8">
-                <Button asChild className="bg-[#1E40AF] hover:bg-[#1E40AF]/90">
+                <Button asChild className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-lg shadow-cyan-500/30">
                   <Link href="/contacts">Подать заявление</Link>
                 </Button>
                 <Button variant="secondary" asChild>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-slate-700 leading-relaxed">
                 Департамент имущественных и земельных отношений осуществляет предоставление земельных участков,
                 находящихся в муниципальной собственности городского округа «город Якутск», или земельных участков,
                 государственная собственность на которые не разграничена, для строительства, ведения садоводства,
@@ -176,104 +176,104 @@ export default function ServicesPage() {
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 my-6">
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <Clock className="w-6 h-6 text-[#1E40AF] mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Срок предоставления</p>
-                  <p className="text-sm text-gray-600 mt-1">45 рабочих дней</p>
+                <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-xl border border-cyan-200 shadow-sm">
+                  <Clock className="w-6 h-6 text-cyan-600 mb-2" />
+                  <p className="text-sm font-semibold text-slate-900">Срок предоставления</p>
+                  <p className="text-sm text-slate-600 mt-1">45 рабочих дней</p>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <Wallet className="w-6 h-6 text-[#1E40AF] mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Стоимость</p>
-                  <p className="text-sm text-gray-600 mt-1">По результатам аукциона</p>
+                <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-xl border border-emerald-200 shadow-sm">
+                  <Wallet className="w-6 h-6 text-emerald-600 mb-2" />
+                  <p className="text-sm font-semibold text-slate-900">Стоимость</p>
+                  <p className="text-sm text-slate-600 mt-1">По результатам аукциона</p>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <FileText className="w-6 h-6 text-[#1E40AF] mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Результат</p>
-                  <p className="text-sm text-gray-600 mt-1">Договор купли-продажи или аренды</p>
+                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-xl border border-indigo-200 shadow-sm">
+                  <FileText className="w-6 h-6 text-indigo-600 mb-2" />
+                  <p className="text-sm font-semibold text-slate-900">Результат</p>
+                  <p className="text-sm text-slate-600 mt-1">Договор купли-продажи или аренды</p>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Порядок получения услуги</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Порядок получения услуги</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">1</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">1</div>
                   <div>
-                    <p className="font-medium text-gray-900">Выбор земельного участка</p>
-                    <p className="text-sm text-gray-600 mt-1">Ознакомьтесь с перечнем земельных участков, выставленных на торги, на официальном сайте или в Департаменте</p>
+                    <p className="font-medium text-slate-900">Выбор земельного участка</p>
+                    <p className="text-sm text-slate-600 mt-1">Ознакомьтесь с перечнем земельных участков, выставленных на торги, на официальном сайте или в Департаменте</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">2</div>
                   <div>
-                    <p className="font-medium text-gray-900">Подача заявки на участие в аукционе</p>
-                    <p className="text-sm text-gray-600 mt-1">Подайте заявку с приложением необходимых документов и внесите задаток (20% от начальной цены)</p>
+                    <p className="font-medium text-slate-900">Подача заявки на участие в аукционе</p>
+                    <p className="text-sm text-slate-600 mt-1">Подайте заявку с приложением необходимых документов и внесите задаток (20% от начальной цены)</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">3</div>
                   <div>
-                    <p className="font-medium text-gray-900">Участие в аукционе</p>
-                    <p className="text-sm text-gray-600 mt-1">Примите участие в торгах в установленные дату и время. Аукцион проводится в открытой форме</p>
+                    <p className="font-medium text-slate-900">Участие в аукционе</p>
+                    <p className="text-sm text-slate-600 mt-1">Примите участие в торгах в установленные дату и время. Аукцион проводится в открытой форме</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">4</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">4</div>
                   <div>
-                    <p className="font-medium text-gray-900">Заключение договора</p>
-                    <p className="text-sm text-gray-600 mt-1">При победе в аукционе заключите договор купли-продажи или аренды в течение 30 дней</p>
+                    <p className="font-medium text-slate-900">Заключение договора</p>
+                    <p className="text-sm text-slate-600 mt-1">При победе в аукционе заключите договор купли-продажи или аренды в течение 30 дней</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#1E40AF] text-white rounded-full flex items-center justify-center font-semibold">5</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-full flex items-center justify-center font-semibold shadow-lg shadow-cyan-500/30">5</div>
                   <div>
-                    <p className="font-medium text-gray-900">Регистрация права</p>
-                    <p className="text-sm text-gray-600 mt-1">Зарегистрируйте право собственности или аренды в Росреестре</p>
+                    <p className="font-medium text-slate-900">Регистрация права</p>
+                    <p className="text-sm text-slate-600 mt-1">Зарегистрируйте право собственности или аренды в Росреестре</p>
                   </div>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Необходимые документы</h3>
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <p className="text-sm font-semibold text-gray-900 mb-4">Для физических лиц:</p>
-                <ul className="space-y-3 text-gray-700 mb-6">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Необходимые документы</h3>
+              <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                <p className="text-sm font-semibold text-slate-900 mb-4">Для физических лиц:</p>
+                <ul className="space-y-3 text-slate-700 mb-6">
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Заявка на участие в аукционе</strong> (по установленной форме)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Копия паспорта</strong> гражданина РФ (все заполненные страницы)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Документ, подтверждающий внесение задатка</strong> (платежное поручение или квитанция)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Доверенность</strong> (если интересы представляет доверенное лицо)</span>
                   </li>
                 </ul>
 
-                <p className="text-sm font-semibold text-gray-900 mb-4">Для юридических лиц:</p>
-                <ul className="space-y-3 text-gray-700">
+                <p className="text-sm font-semibold text-slate-900 mb-4">Для юридических лиц:</p>
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Заявка на участие в аукционе</strong> (по установленной форме)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Выписка из ЕГРЮЛ</strong> (не старше 30 дней)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Копии учредительных документов</strong> (устав, учредительный договор)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Документ, подтверждающий полномочия</strong> руководителя (приказ о назначении, решение учредителей)</span>
                   </li>
                   <li className="flex gap-3">
-                    <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <FileText className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span><strong>Документ, подтверждающий внесение задатка</strong> (платежное поручение)</span>
                   </li>
                 </ul>
@@ -289,8 +289,8 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Условия участия в аукционе</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Условия участия в аукционе</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>Размер задатка составляет 20% от начальной цены предмета аукциона</li>
                 <li>Шаг аукциона устанавливается в размере 3% от начальной цены</li>
                 <li>Победителем признается участник, предложивший наибольшую цену</li>
@@ -298,15 +298,15 @@ export default function ServicesPage() {
                 <li>Оплата по договору производится в течение 10 дней с момента его заключения</li>
               </ul>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Основания для отказа в допуске к аукциону</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Основания для отказа в допуске к аукциону</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>Непредставление необходимых документов или представление недостоверных сведений</li>
                 <li>Несвоевременное внесение задатка</li>
                 <li>Подача заявки лицом, которое не имеет права быть участником аукциона</li>
                 <li>Наличие сведений о заявителе в реестре недобросовестных участников аукциона</li>
               </ul>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Часто задаваемые вопросы</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Часто задаваемые вопросы</h3>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="land-1">
                   <AccordionTrigger>Где можно посмотреть список участков, выставленных на торги?</AccordionTrigger>
@@ -353,33 +353,33 @@ export default function ServicesPage() {
                 </AccordionItem>
               </Accordion>
 
-              <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Контакты для консультаций</h3>
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 space-y-4">
+              <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-4">Контакты для консультаций</h3>
+              <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl border border-cyan-200 space-y-4 shadow-sm">
                 <div>
-                  <p className="font-semibold text-gray-900 mb-2">Отдел образования земельных участков</p>
-                  <div className="space-y-1 text-gray-700">
-                    <p>Телефон: <a href="tel:+74112326479" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 32-64-79</a></p>
+                  <p className="font-semibold text-slate-900 mb-2">Отдел образования земельных участков</p>
+                  <div className="space-y-1 text-slate-700">
+                    <p>Телефон: <a href="tel:+74112326479" className="text-cyan-600 hover:text-cyan-700 hover:underline font-medium">8 (4112) 32-64-79</a></p>
                     <p>Адрес: г. Якутск, ул. Орджоникидзе, 24</p>
                   </div>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 mb-2">Отдел землеустройства</p>
-                  <div className="space-y-1 text-gray-700">
-                    <p>Телефон: <a href="tel:+74112326478" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 32-64-78</a></p>
+                  <p className="font-semibold text-slate-900 mb-2">Отдел землеустройства</p>
+                  <div className="space-y-1 text-slate-700">
+                    <p>Телефон: <a href="tel:+74112326478" className="text-cyan-600 hover:text-cyan-700 hover:underline font-medium">8 (4112) 32-64-78</a></p>
                   </div>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 mb-2">Юридический отдел (земельные вопросы)</p>
-                  <div className="space-y-1 text-gray-700">
-                    <p>Телефон: <a href="tel:+74112326458" className="text-[#1E40AF] hover:underline font-medium">8 (4112) 32-64-58</a></p>
+                  <p className="font-semibold text-slate-900 mb-2">Юридический отдел (земельные вопросы)</p>
+                  <div className="space-y-1 text-slate-700">
+                    <p>Телефон: <a href="tel:+74112326458" className="text-cyan-600 hover:text-cyan-700 hover:underline font-medium">8 (4112) 32-64-58</a></p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 pt-2">Часы приема: Пн-Пт 9:00-18:00 (обед 13:00-14:00)</p>
+                <p className="text-sm text-slate-600 pt-2">Часы приема: Пн-Пт 9:00-18:00 (обед 13:00-14:00)</p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button asChild className="bg-[#F97316] hover:bg-[#EA580C]">
+              <Button asChild className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-lg shadow-cyan-500/30">
                 <Link href="/documents">
                   <Download className="w-4 h-4 mr-2" />
                   Скачать форму заявки
@@ -394,8 +394,8 @@ export default function ServicesPage() {
 
         {/* FAQ Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Часто задаваемые вопросы</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Часто задаваемые вопросы</h2>
+          <p className="text-slate-600 mb-8">
             Ответы на наиболее распространенные вопросы о муниципальных услугах и управлении имуществом
           </p>
 
