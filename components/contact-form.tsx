@@ -158,7 +158,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Name field */}
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-gray-900">
+          <Label htmlFor="name" className="text-slate-900">
             Имя <span className="text-red-500" aria-label="обязательное поле">*</span>
           </Label>
           <Input
@@ -182,7 +182,7 @@ export function ContactForm() {
 
         {/* Email field */}
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-gray-900">
+          <Label htmlFor="email" className="text-slate-900">
             Email <span className="text-red-500" aria-label="обязательное поле">*</span>
           </Label>
           <Input
@@ -206,7 +206,7 @@ export function ContactForm() {
 
         {/* Phone field */}
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-gray-900">
+          <Label htmlFor="phone" className="text-slate-900">
             Телефон <span className="text-red-500" aria-label="обязательное поле">*</span>
           </Label>
           <Input
@@ -230,7 +230,7 @@ export function ContactForm() {
 
         {/* Subject field */}
         <div className="space-y-2">
-          <Label htmlFor="subject" className="text-gray-900">
+          <Label htmlFor="subject" className="text-slate-900">
             Тема обращения <span className="text-red-500" aria-label="обязательное поле">*</span>
           </Label>
           <Input
@@ -255,7 +255,7 @@ export function ContactForm() {
 
       {/* Message field */}
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-gray-900">
+        <Label htmlFor="message" className="text-slate-900">
           Сообщение <span className="text-red-500" aria-label="обязательное поле">*</span>
         </Label>
         <textarea
@@ -269,7 +269,7 @@ export function ContactForm() {
           disabled={isSubmitting}
           required
           rows={6}
-          className="flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-base font-['Lato'] ring-offset-white transition-colors placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E40AF] focus-visible:border-[#1E40AF] disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 aria-[invalid=true]:border-red-500 aria-[invalid=true]:focus-visible:ring-red-500 resize-none"
+          className="flex w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-base ring-offset-white transition-colors placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:border-cyan-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 aria-[invalid=true]:border-red-500 aria-[invalid=true]:focus-visible:ring-red-500 resize-none"
         />
         {errors.message && (
           <p id="message-error" className="text-sm text-red-600" role="alert">
@@ -298,7 +298,7 @@ export function ContactForm() {
         </Button>
       </div>
 
-      <p className="text-sm text-gray-500 text-center">
+      <p className="text-sm text-slate-500 text-center">
         <span className="text-red-500">*</span> — обязательные поля для заполнения
       </p>
     </form>
