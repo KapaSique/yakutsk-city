@@ -190,8 +190,16 @@ export default function ContactsPage() {
             <CardTitle>Расположение на карте</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">Карта будет добавлена позже</p>
+            <div className="aspect-video rounded-lg overflow-hidden">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=129.732555%2C62.028098&z=16&l=map&pt=129.732555%2C62.028098%2Cpm2rdm"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allowFullScreen
+                title="Карта расположения: проспект Ленина, дом 15, Якутск"
+                className="w-full h-full"
+              />
             </div>
           </CardContent>
         </Card>
