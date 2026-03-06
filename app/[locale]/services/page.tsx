@@ -3,10 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
 import { FileText, Clock, Wallet, AlertCircle, Download } from "lucide-react";
+import { Breadcrumb } from "@/components/breadcrumb";
+import { FAQ } from "@/components/faq";
 
 export default function ServicesPage() {
   return (
-    <div className="py-16">
+    <>
+      <Breadcrumb items={[{ label: "Муниципальные услуги" }]} />
+      <div className="py-16">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Муниципальные услуги</h1>
 
@@ -129,3 +133,15 @@ export default function ServicesPage() {
                 <li>Арендная плата устанавливается в соответствии с рыночной стоимостью или с применением понижающих коэффициентов</li>
                 <li>Возможность выкупа арендуемого имущества по истечении срока аренды</li>
               </ul>
+
+              <div className="flex gap-4 mt-8">
+                <Button asChild className="bg-[#1E40AF] hover:bg-[#1E40AF]/90">
+                  <Link href="/contacts">Подать заявление</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/documents">
+                    <Download className="w-4 h-4 mr-2" />
+                    Скачать форму заявления
+                  </Link>
+                </Button>
+              </div>

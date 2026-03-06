@@ -1,10 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Download, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export default function DocumentsPage() {
   return (
-    <div className="py-16">
+    <>
+      <Breadcrumb items={[{ label: "Документы" }]} />
+      <div className="py-16">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Документы</h1>
 
@@ -204,7 +207,8 @@ export default function DocumentsPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        {/* Property Lists */}
+        <Card className="mb-8">
           <CardHeader>
             <CardTitle>Перечни имущества</CardTitle>
             <CardDescription>
@@ -212,22 +216,54 @@ export default function DocumentsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <p className="text-gray-700 leading-relaxed">
-                Перечень муниципального имущества городского округа "город Якутск", предназначенного для передачи
-                во владение или пользование субъектам малого и среднего предпринимательства и организациям,
-                образующим структуру поддержки субъектов малого и среднего предпринимательства.
-              </p>
+            <div className="space-y-3">
               <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                 <div className="flex items-start gap-3 flex-1">
                   <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">
-                      Актуальный перечень имущества для МСП
+                      Перечень муниципального имущества для передачи субъектам МСП (I квартал 2026)
                     </h3>
-                    <p className="text-sm text-gray-600">
-                      Обновлено: 2024 год
+                    <p className="text-sm text-gray-600 mb-1">
+                      Утвержден распоряжением Департамента от 15.01.2026 № 12-Р
                     </p>
+                    <p className="text-xs text-gray-500">XLSX, 245 КБ • Обновлено: 15.01.2026</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Реестр муниципального имущества городского округа "город Якутск"
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Актуализированная версия по состоянию на 01.03.2026
+                    </p>
+                    <p className="text-xs text-gray-500">XLSX, 3.2 МБ • Обновлено: 01.03.2026</p>
+                  </div>
+                </div>
+                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                  <Download className="h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <div className="flex items-start gap-3 flex-1">
+                  <FileText className="h-6 w-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Перечень свободных земельных участков для предоставления в аренду
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Распоряжение Департамента от 20.02.2026 № 45-Р
+                    </p>
+                    <p className="text-xs text-gray-500">PDF, 1.8 МБ • Обновлено: 20.02.2026</p>
                   </div>
                 </div>
                 <Button variant="ghost" size="icon" aria-label="Скачать документ">

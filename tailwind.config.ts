@@ -28,6 +28,7 @@ const config: Config = {
           50: "#F9FAFB",
           100: "#F3F4F6",
           200: "#E5E7EB",
+          300: "#D1D5DB",
           600: "#4B5563",
           900: "#111827",
         },
@@ -44,6 +45,15 @@ const config: Config = {
       spacing: {
         "18": "4.5rem",
         "88": "22rem",
+      },
+      keyframes: {
+        skeleton: {
+          "0%, 100%": { backgroundColor: "#E5E7EB" },
+          "50%": { backgroundColor: "#D1D5DB" },
+        },
+      },
+      animation: {
+        skeleton: "skeleton 2s ease-in-out infinite",
       },
     },
   },
