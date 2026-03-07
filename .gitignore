@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Old site backup
 saveweb2zip-com-yakutskcity-ru/
+
+# Claude instructions
+CLAUDE.md

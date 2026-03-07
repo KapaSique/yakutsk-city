@@ -148,19 +148,19 @@ export default function AboutPage() {
                     <span>Предоставление земельных участков в собственность, аренду</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span>Образование земельных участков из земель муниципальной собственности</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span>Проведение торгов по продаже земельных участков</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span>Установление и изменение вида разрешённого использования земель</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                     <span>Ведение информационной системы обеспечения градостроительной деятельности</span>
                   </li>
                 </ul>
