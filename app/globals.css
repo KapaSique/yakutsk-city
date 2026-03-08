@@ -20,6 +20,11 @@
     @apply font-heading font-semibold;
   }
 
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
   /* Respect user's motion preferences */
   @media (prefers-reduced-motion: reduce) {
     *,
