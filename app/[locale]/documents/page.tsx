@@ -5,9 +5,12 @@ import { FileText, Download, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function DocumentsPage() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("documents");
+  const tNav = useTranslations("nav");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,7 +33,7 @@ export default function DocumentsPage() {
 
   return (
     <>
-      <Breadcrumb items={[{ label: "Документы" }]} />
+      <Breadcrumb items={[{ label: tNav("documents") }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
         <motion.h1
@@ -39,7 +42,7 @@ export default function DocumentsPage() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="text-4xl font-bold text-slate-900 mb-8"
         >
-          Документы
+          {t("title")}
         </motion.h1>
 
         {/* Search hint */}
@@ -51,7 +54,7 @@ export default function DocumentsPage() {
         >
           <Search className="h-5 w-5 text-cyan-600" aria-hidden="true" />
           <p className="text-sm text-slate-700">
-            Используйте Ctrl+F для быстрого поиска по документам на странице
+            {t("searchHint")}
           </p>
         </motion.div>
 
@@ -65,9 +68,9 @@ export default function DocumentsPage() {
           <motion.div variants={itemVariants}>
             <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
-            <CardTitle>Нормативные правовые акты</CardTitle>
+            <CardTitle>{t("regulations")}</CardTitle>
             <CardDescription>
-              Документы, регламентирующие деятельность департамента
+              {t("regulationsDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -85,7 +88,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.2 МБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -103,7 +106,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 856 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -121,7 +124,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 624 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -139,7 +142,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.5 МБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -157,7 +160,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 742 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -175,7 +178,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 968 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -188,9 +191,9 @@ export default function DocumentsPage() {
       <motion.div variants={itemVariants}>
         <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
-            <CardTitle>Федеральные законы</CardTitle>
+            <CardTitle>{t("federalLaws")}</CardTitle>
             <CardDescription>
-              Основные федеральные законы, регулирующие деятельность
+              {t("federalLawsDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -208,7 +211,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 2.8 МБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -226,7 +229,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.4 МБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -244,7 +247,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 986 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -257,9 +260,9 @@ export default function DocumentsPage() {
       <motion.div variants={itemVariants}>
         <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
-            <CardTitle>Перечни имущества</CardTitle>
+            <CardTitle>{t("propertyLists")}</CardTitle>
             <CardDescription>
-              Имущество для субъектов малого и среднего предпринимательства
+              {t("propertyListsDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -277,7 +280,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">XLSX, 245 КБ • Обновлено: 15.01.2026</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -295,7 +298,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">XLSX, 3.2 МБ • Обновлено: 01.03.2026</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -313,7 +316,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.8 МБ • Обновлено: 20.02.2026</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -326,9 +329,9 @@ export default function DocumentsPage() {
       <motion.div variants={itemVariants}>
         <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
-            <CardTitle>Административные регламенты</CardTitle>
+            <CardTitle>{t("adminRegulations")}</CardTitle>
             <CardDescription>
-              Порядок предоставления муниципальных услуг
+              {t("adminRegulationsDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -346,7 +349,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.1 МБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -364,7 +367,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.4 МБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -382,7 +385,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 892 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -395,9 +398,9 @@ export default function DocumentsPage() {
       <motion.div variants={itemVariants}>
         <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
-            <CardTitle>Отчеты и аналитика</CardTitle>
+            <CardTitle>{t("reports")}</CardTitle>
             <CardDescription>
-              Отчеты о деятельности департамента
+              {t("reportsDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -415,7 +418,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 2.1 МБ • Опубликовано: 28.01.2026</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -433,7 +436,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 1.6 МБ • Опубликовано: 15.01.2026</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -451,7 +454,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">XLSX, 428 КБ • Опубликовано: 20.01.2026</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -464,9 +467,9 @@ export default function DocumentsPage() {
       <motion.div variants={itemVariants}>
         <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
-            <CardTitle>Формы и бланки</CardTitle>
+            <CardTitle>{t("forms")}</CardTitle>
             <CardDescription>
-              Типовые формы заявлений и документов
+              {t("formsDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -484,7 +487,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">DOCX, 45 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -502,7 +505,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">DOCX, 52 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -520,7 +523,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">DOCX, 48 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -538,7 +541,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">PDF, 128 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>
@@ -556,7 +559,7 @@ export default function DocumentsPage() {
                     <p className="text-xs text-slate-500">DOCX, 38 КБ</p>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Скачать документ">
+                <Button variant="ghost" size="icon" aria-label={t("download")}>
                   <Download className="h-5 w-5" />
                 </Button>
               </div>

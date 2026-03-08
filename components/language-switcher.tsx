@@ -9,7 +9,6 @@ import { useState, useRef, useEffect } from "react";
 const locales = [
   { code: "ru", label: "Русский" },
   { code: "sah", label: "Саха" },
-  { code: "en", label: "English" },
 ] as const;
 
 export function LanguageSwitcher() {

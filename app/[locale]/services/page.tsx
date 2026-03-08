@@ -3,14 +3,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import Link from "next/link";
+import { Link } from "@/routing";
 import { FileText, Clock, Wallet, AlertCircle, Download } from "lucide-react";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { FAQ } from "@/components/faq";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("services");
+  const tNav = useTranslations("nav");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -33,7 +36,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Breadcrumb items={[{ label: "Муниципальные услуги" }]} />
+      <Breadcrumb items={[{ label: tNav("services") }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
         <motion.h1
@@ -42,7 +45,7 @@ export default function ServicesPage() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="text-4xl font-bold text-slate-900 mb-8"
         >
-          Муниципальные услуги
+          {t("title")}
         </motion.h1>
 
         <motion.div

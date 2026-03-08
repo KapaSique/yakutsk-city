@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileText, Users, Building2, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/routing";
 import Stats from "@/components/stats";
 import { motion, useReducedMotion } from "framer-motion";
 import Script from "next/script";
+import { useTranslations } from "next-intl";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -36,6 +37,8 @@ const jsonLd = {
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("home");
+  const tNav = useTranslations("nav");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,7 +113,7 @@ export default function Home() {
               transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.2 }}
               className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight"
             >
-              Департамент имущественных и земельных отношений
+              {t("title")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -118,7 +121,7 @@ export default function Home() {
               transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.4 }}
               className="text-xl md:text-2xl text-gray-100 mb-12 leading-relaxed max-w-3xl"
             >
-              Управление муниципальным имуществом и земельными участками города Якутска
+              {t("subtitle")}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -133,7 +136,7 @@ export default function Home() {
               >
                 <Button asChild size="lg" className="group bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-200 border-0">
                   <Link href="/about" className="inline-flex items-center gap-2">
-                    О департаменте
+                    {t("aboutButton")}
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>
                 </Button>
@@ -144,7 +147,7 @@ export default function Home() {
                 transition={{ duration: 0.2 }}
               >
                 <Button asChild variant="secondary" size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm transition-all duration-200">
-                  <Link href="/contacts">Контакты</Link>
+                  <Link href="/contacts">{t("contactsButton")}</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -162,8 +165,8 @@ export default function Home() {
             transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
             className="mb-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Основные разделы</h2>
-            <p className="text-lg text-slate-600">Быстрый доступ к важной информации</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">{t("sections")}</h2>
+            <p className="text-lg text-slate-600">{t("quickAccess")}</p>
           </motion.div>
           <motion.div
             variants={containerVariants}
@@ -189,10 +192,10 @@ export default function Home() {
                         <FileText className="h-8 w-8 text-white" aria-hidden="true" />
                       </motion.div>
                       <CardTitle className="text-xl mb-2 group-hover:text-cyan-600 transition-colors duration-200">
-                        Документы
+                        {tNav("documents")}
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed">
-                        Нормативные акты и регламенты
+                        {t("documentsDesc")}
                       </CardDescription>
                     </CardHeader>
                   </Card>
@@ -220,7 +223,7 @@ export default function Home() {
                         Руководство
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed">
-                        Структура и сотрудники департамента
+                        {t("leadershipDesc")}
                       </CardDescription>
                     </CardHeader>
                   </Card>
@@ -245,10 +248,10 @@ export default function Home() {
                         <Building2 className="h-8 w-8 text-white" aria-hidden="true" />
                       </motion.div>
                       <CardTitle className="text-xl mb-2 group-hover:text-emerald-600 transition-colors duration-200">
-                        Услуги
+                        {tNav("services")}
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed">
-                        Муниципальные услуги и регламенты
+                        {t("servicesDesc")}
                       </CardDescription>
                     </CardHeader>
                   </Card>
@@ -273,10 +276,10 @@ export default function Home() {
                         <Phone className="h-8 w-8 text-white" aria-hidden="true" />
                       </motion.div>
                       <CardTitle className="text-xl mb-2 group-hover:text-violet-600 transition-colors duration-200">
-                        Контакты
+                        {tNav("contacts")}
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed">
-                        Адрес, телефоны, режим работы
+                        {t("contactsDesc")}
                       </CardDescription>
                     </CardHeader>
                   </Card>
@@ -306,14 +309,14 @@ export default function Home() {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Контактная информация</h2>
-              <p className="text-lg text-slate-300">Мы готовы ответить на ваши вопросы</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("contactInfo")}</h2>
+              <p className="text-lg text-slate-300">{t("contactInfoSubtitle")}</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 mb-12">
 {[
-                { title: "Адрес", content: "677000, Республика Саха (Якутия), г. Якутск, пр. Ленина, д. 15, офис 612" },
-                { title: "Телефон", content: "8 (4112) 40-88-09", link: "tel:+74112408809" },
-                { title: "Режим работы", content: "Пн-Пт 09:00-18:00\nОбед 13:00-14:00" }
+                { title: t("address"), content: t("addressText") },
+                { title: t("phone"), content: "8 (4112) 40-88-09", link: "tel:+74112408809" },
+                { title: t("workingHours"), content: t("workingHoursText") }
               ].map((item, index) => (
                 <motion.div
                   key={item.title}
@@ -351,7 +354,7 @@ export default function Home() {
               >
                 <Button asChild size="lg" className="group bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-200">
                   <Link href="/contacts" className="inline-flex items-center gap-2">
-                    Подробная информация
+                    {t("contactUs")}
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>
                 </Button>

@@ -1,12 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/routing";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("footer");
 
   return (
     <footer className="border-t-2 border-cyan-500 bg-slate-50">
@@ -51,7 +53,7 @@ export function Footer() {
           {/* About */}
           <div>
             <h3 className="text-lg font-heading font-semibold text-cyan-600 mb-4 pb-2 border-b-2 border-cyan-500/20">
-              О департаменте
+              {t("about")}
             </h3>
             <p className="text-sm text-slate-700 leading-relaxed">
               Департамент осуществляет управление и распоряжение имуществом и земельными ресурсами города Якутска в интересах жителей столицы Республики Саха (Якутия).
@@ -61,14 +63,14 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-heading font-semibold text-cyan-600 mb-4 pb-2 border-b-2 border-cyan-500/20">
-              Быстрые ссылки
+              {t("quickLinks")}
             </h3>
             <nav className="space-y-2.5" aria-label="Навигация в подвале">
               <Link
                 href="/about"
                 className="block text-sm text-slate-700 hover:text-cyan-600 hover:underline transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md"
               >
-                О департаменте
+                {t("about")}
               </Link>
               <Link
                 href="/news"
@@ -86,7 +88,7 @@ export function Footer() {
                 href="/contacts"
                 className="block text-sm text-slate-700 hover:text-cyan-600 hover:underline transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md"
               >
-                Контакты
+                {t("contacts")}
               </Link>
             </nav>
           </div>
@@ -94,7 +96,7 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-heading font-semibold text-cyan-600 mb-4 pb-2 border-b-2 border-cyan-500/20">
-              Контакты
+              {t("contacts")}
             </h3>
             <div className="space-y-3.5 text-sm text-slate-700">
               <div className="flex items-start gap-3">
@@ -120,7 +122,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="pt-2 border-t border-slate-200">
-                <span className="font-medium">Режим работы:</span> Пн-Пт 09:00-18:00
+                {t("workingHours")}
               </div>
               <div className="flex gap-5 pt-2">
                 <a
@@ -154,7 +156,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 pt-8 border-t-2 border-slate-200 text-center text-sm text-slate-600">
-          <p>© {new Date().getFullYear()} Окружная администрация города Якутска. Все права защищены.</p>
+          <p>© {new Date().getFullYear()} {t("copyright")}</p>
         </div>
       </div>
     </footer>

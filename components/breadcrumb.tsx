@@ -1,5 +1,8 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/routing";
 import { ChevronRight, Home } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface BreadcrumbItem {
   label: string;
@@ -11,6 +14,8 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
+  const t = useTranslations("breadcrumb");
+
   return (
     <nav aria-label="Навигационная цепочка" className="bg-slate-50 border-b border-slate-200">
       <div className="container mx-auto px-4 py-3">
@@ -20,10 +25,10 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
             <Link
               href="/"
               className="inline-flex items-center gap-1.5 text-slate-600 hover:text-cyan-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-1"
-              aria-label="Перейти на главную страницу"
+              aria-label={t("home")}
             >
               <Home className="h-4 w-4" aria-hidden="true" />
-              <span>Главная</span>
+              <span>{t("home")}</span>
             </Link>
           </li>
 
@@ -39,7 +44,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                 />
                 {item.href && !isLast ? (
                   <Link
-                    href={item.href}
+                    href={item.href as any}
                     className="text-slate-600 hover:text-cyan-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-1"
                   >
                     {item.label}

@@ -3,9 +3,12 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function NewsPage() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("news");
+  const tNav = useTranslations("nav");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -79,7 +82,7 @@ export default function NewsPage() {
 
   return (
     <>
-      <Breadcrumb items={[{ label: "Новости" }]} />
+      <Breadcrumb items={[{ label: tNav("news") }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
         <motion.h1
@@ -88,7 +91,7 @@ export default function NewsPage() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="text-4xl font-bold text-slate-900 mb-8"
         >
-          Новости
+          {t("title")}
         </motion.h1>
 
         <motion.div
@@ -133,7 +136,7 @@ export default function NewsPage() {
           className="mt-12 text-center"
         >
           <p className="text-slate-600">
-            Больше новостей в наших социальных сетях:{" "}
+            {t("moreNews")}{" "}
             <a href="https://vk.com/dizo_ykt" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-700 hover:underline">
               ВКонтакте
             </a>

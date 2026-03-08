@@ -5,9 +5,12 @@ import { Building2, Users, FileText, Award, Target, CheckCircle2, Calendar, Data
 import { Timeline, TimelineEvent } from "@/components/timeline";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("about");
+  const tNav = useTranslations("nav");
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,7 +78,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <Breadcrumb items={[{ label: "О департаменте" }]} />
+      <Breadcrumb items={[{ label: tNav("about") }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
         <motion.h1
@@ -84,7 +87,7 @@ export default function AboutPage() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="text-4xl font-bold text-slate-900 mb-8"
         >
-          О департаменте
+          {t("title")}
         </motion.h1>
 
         <motion.div
@@ -99,43 +102,29 @@ export default function AboutPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Building2 className="h-5 w-5 text-cyan-600" />
-                  История и миссия департамента
+                  {t("historyAndMission")}
                 </CardTitle>
               </CardHeader>
           <CardContent className="prose max-w-none">
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">История создания</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{t("historyTitle")}</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Департамент имущественных и земельных отношений Окружной администрации города Якутска был образован
-                  в соответствии с решением Якутской городской Думы в рамках реформирования системы управления
-                  муниципальной собственностью. За годы работы департамент стал ключевым органом в сфере управления
-                  имущественным комплексом столицы Республики Саха (Якутия), обеспечивая эффективное использование
-                  муниципальных ресурсов и развитие земельных отношений.
+                  {t("historyText")}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Миссия департамента</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{t("missionTitle")}</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Обеспечение эффективного управления муниципальной собственностью и земельными ресурсами города
-                  Якутска в интересах жителей городского округа, создание благоприятных условий для социально-экономического
-                  развития территории, повышение инвестиционной привлекательности города и обеспечение прозрачности
-                  в сфере имущественных и земельных отношений.
+                  {t("missionText")}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">Основная деятельность</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{t("mainActivity")}</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Департамент имущественных и земельных отношений Окружной администрации города Якутска является
-                  отраслевым (функциональным) органом местной администрации, входящий в структуру Окружной
-                  администрации города Якутска, осуществляющий функции в сфере управления муниципальным имуществом,
-                  а также в сфере управления и распоряжения земельными участками, находящимися в муниципальной
-                  собственности, а также земельными участками, государственная собственность на которые не
-                  разграничена в городском округе "город Якутск", в рамках осуществления органами местного
-                  самоуправления городского округа "город Якутск" полномочий по решению вопросов местного значения
-                  и отдельных государственных полномочий.
+                  {t("mainActivityText")}
                 </p>
               </div>
             </div>
@@ -149,13 +138,13 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
                   <Target className="h-5 w-5 text-cyan-600" />
-                  Основные функции и полномочия
+                  {t("keyResponsibilities")}
                 </CardTitle>
               </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-semibold text-slate-900 mb-3">Управление муниципальным имуществом</h3>
+                <h3 className="font-semibold text-slate-900 mb-3">{t("propertyManagement")}</h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -181,7 +170,7 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h3 className="font-semibold text-slate-900 mb-3">Управление земельными ресурсами</h3>
+                <h3 className="font-semibold text-slate-900 mb-3">{t("landManagement")}</h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -207,7 +196,7 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h3 className="font-semibold text-slate-900 mb-3">Организационно-правовая деятельность</h3>
+                <h3 className="font-semibold text-slate-900 mb-3">{t("legalActivity")}</h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -225,7 +214,7 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h3 className="font-semibold text-slate-900 mb-3">Информационное обеспечение</h3>
+                <h3 className="font-semibold text-slate-900 mb-3">{t("informationSupport")}</h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -252,10 +241,10 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-cyan-600" />
-              Статистика деятельности
+              {t("statistics")}
                 </CardTitle>
                 <CardDescription>
-                  Ключевые показатели работы департамента
+                  {t("statisticsDesc")}
                 </CardDescription>
               </CardHeader>
           <CardContent>
@@ -266,7 +255,7 @@ export default function AboutPage() {
                   className="text-center p-6 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl border border-cyan-200 shadow-sm cursor-default"
                 >
                   <div className="text-4xl font-bold text-cyan-600 mb-2">2,847</div>
-                  <div className="text-sm text-slate-700 font-medium">Объектов муниципальной собственности</div>
+                  <div className="text-sm text-slate-700 font-medium">{t("propertyObjects")}</div>
                 </motion.div>
 
                 <motion.div
@@ -275,7 +264,7 @@ export default function AboutPage() {
                   className="text-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border border-emerald-200 shadow-sm cursor-default"
                 >
                   <div className="text-4xl font-bold text-emerald-600 mb-2">15,234</div>
-                  <div className="text-sm text-slate-700 font-medium">Земельных участков в управлении</div>
+                  <div className="text-sm text-slate-700 font-medium">{t("landPlots")}</div>
                 </motion.div>
 
                 <motion.div
@@ -284,7 +273,7 @@ export default function AboutPage() {
                   className="text-center p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl border border-indigo-200 shadow-sm cursor-default"
                 >
                   <div className="text-4xl font-bold text-indigo-600 mb-2">98.7%</div>
-                  <div className="text-sm text-slate-700 font-medium">Заявлений обработано в срок</div>
+                  <div className="text-sm text-slate-700 font-medium">{t("applicationsProcessed")}</div>
                 </motion.div>
               </div>
             </CardContent>
@@ -297,10 +286,10 @@ export default function AboutPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-cyan-600" />
-                История развития департамента
+                {t("historyTimeline")}
               </CardTitle>
               <CardDescription>
-                Ключевые вехи в развитии департамента с 2010 по 2026 год
+                {t("historyTimelineDesc")}
               </CardDescription>
             </CardHeader>
               <CardContent className="pt-6">
