@@ -1,22 +1,44 @@
+"use client";
+
 import { Building2, MapPin, FileCheck, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface StatItemProps {
   icon: React.ReactNode;
   value: string;
   label: string;
   description?: string;
+  index: number;
 }
 
-function StatItem({ icon, value, label, description }: StatItemProps) {
+function StatItem({ icon, value, label, description, index }: StatItemProps) {
   return (
-    <div className="bg-white rounded-xl p-8 border border-slate-200 hover:border-cyan-500/50 transition-all hover:shadow-xl hover:-translate-y-1 duration-300">
-      <div className="flex flex-col items-center text-center">
-        <div className="mb-4 p-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/30">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-cyan-500/50 transition-all hover:shadow-2xl duration-300 relative overflow-hidden group"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="flex flex-col items-center text-center relative">
+        <motion.div
+          whileHover={{ rotate: 360, scale: 1.1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-4 p-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full shadow-lg shadow-cyan-500/30 group-hover:shadow-cyan-500/50"
+        >
           {icon}
-        </div>
-        <div className="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">
+        </motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 + 0.3, type: "spring" }}
+          className="text-4xl md:text-5xl font-bold text-cyan-600 mb-2"
+        >
           {value}
-        </div>
+        </motion.div>
         <div className="text-lg font-semibold text-slate-900 mb-1">
           {label}
         </div>
@@ -26,7 +48,7 @@ function StatItem({ icon, value, label, description }: StatItemProps) {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -59,16 +81,28 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-y border-slate-200">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-y border-slate-200 relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Наша работа в цифрах
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Ключевые показатели деятельности департамента за 2025 год
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {stats.map((stat, index) => (
             <StatItem
@@ -77,6 +111,7 @@ export default function Stats() {
               value={stat.value}
               label={stat.label}
               description={stat.description}
+              index={index}
             />
           ))}
         </div>
