@@ -1,7 +1,31 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function NewsPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 0.5 },
+    },
+  };
+
   const newsItems = [
     {
       id: 1,
@@ -58,14 +82,28 @@ export default function NewsPage() {
       <Breadcrumb items={[{ label: "Новости" }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">Новости</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+          className="text-4xl font-bold text-slate-900 mb-8"
+        >
+          Новости
+        </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {newsItems.map((item, index) => (
-            <Card
-              key={item.id}
-              className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-slate-200"
-            >
+            <motion.div key={item.id} variants={itemVariants}>
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { y: -8 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Card className="hover:shadow-xl transition-all duration-200 border-slate-200 h-full cursor-default">
               <CardHeader>
                 <CardTitle className="text-lg">{item.title}</CardTitle>
                 <CardDescription>
@@ -81,11 +119,19 @@ export default function NewsPage() {
                   {item.description}
                 </p>
               </CardContent>
-            </Card>
+              </Card>
+            </motion.div>
+          </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.3 }}
+          className="mt-12 text-center"
+        >
           <p className="text-slate-600">
             Больше новостей в наших социальных сетях:{" "}
             <a href="https://vk.com/dizo_ykt" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-cyan-700 hover:underline">
@@ -96,7 +142,7 @@ export default function NewsPage() {
               Telegram
             </a>
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
     </>

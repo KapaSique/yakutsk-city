@@ -1,9 +1,33 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, Users, FileText, Award, Target, CheckCircle2, Calendar, Database, Globe, Smartphone, Brain, Shield, TrendingUp } from "lucide-react";
 import { Timeline, TimelineEvent } from "@/components/timeline";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function AboutPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 0.5 },
+    },
+  };
+
   const historyEvents: TimelineEvent[] = [
     {
       date: "Март 2010",
@@ -54,16 +78,30 @@ export default function AboutPage() {
       <Breadcrumb items={[{ label: "О департаменте" }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">О департаменте</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+          className="text-4xl font-bold text-slate-900 mb-8"
+        >
+          О департаменте
+        </motion.h1>
 
-        {/* History and Mission */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Building2 className="h-5 w-5 text-cyan-600" />
-              История и миссия департамента
-            </CardTitle>
-          </CardHeader>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-8"
+        >
+          {/* History and Mission */}
+          <motion.div variants={itemVariants}>
+            <Card className="hover:shadow-xl transition-shadow duration-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-cyan-600" />
+                  История и миссия департамента
+                </CardTitle>
+              </CardHeader>
           <CardContent className="prose max-w-none">
             <div className="space-y-4">
               <div>
@@ -103,15 +141,17 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Key Responsibilities */}
-        <Card className="mb-8">
+      {/* Key Responsibilities */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Target className="h-5 w-5 text-cyan-600" />
-              Основные функции и полномочия
-            </CardTitle>
-          </CardHeader>
+                  <Target className="h-5 w-5 text-cyan-600" />
+                  Основные функции и полномочия
+                </CardTitle>
+              </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -204,53 +244,71 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Statistics */}
-        <Card className="mb-8">
+      {/* Statistics */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-cyan-600" />
               Статистика деятельности
-            </CardTitle>
-            <CardDescription>
-              Ключевые показатели работы департамента
-            </CardDescription>
-          </CardHeader>
+                </CardTitle>
+                <CardDescription>
+                  Ключевые показатели работы департамента
+                </CardDescription>
+              </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl border border-cyan-200 shadow-sm">
-                <div className="text-4xl font-bold text-cyan-600 mb-2">2,847</div>
-                <div className="text-sm text-slate-700 font-medium">Объектов муниципальной собственности</div>
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-center p-6 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl border border-cyan-200 shadow-sm cursor-default"
+                >
+                  <div className="text-4xl font-bold text-cyan-600 mb-2">2,847</div>
+                  <div className="text-sm text-slate-700 font-medium">Объектов муниципальной собственности</div>
+                </motion.div>
 
-              <div className="text-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border border-emerald-200 shadow-sm">
-                <div className="text-4xl font-bold text-emerald-600 mb-2">15,234</div>
-                <div className="text-sm text-slate-700 font-medium">Земельных участков в управлении</div>
-              </div>
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border border-emerald-200 shadow-sm cursor-default"
+                >
+                  <div className="text-4xl font-bold text-emerald-600 mb-2">15,234</div>
+                  <div className="text-sm text-slate-700 font-medium">Земельных участков в управлении</div>
+                </motion.div>
 
-              <div className="text-center p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl border border-indigo-200 shadow-sm">
-                <div className="text-4xl font-bold text-indigo-600 mb-2">98.7%</div>
-                <div className="text-sm text-slate-700 font-medium">Заявлений обработано в срок</div>
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-center p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl border border-indigo-200 shadow-sm cursor-default"
+                >
+                  <div className="text-4xl font-bold text-indigo-600 mb-2">98.7%</div>
+                  <div className="text-sm text-slate-700 font-medium">Заявлений обработано в срок</div>
+                </motion.div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* History Timeline */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-cyan-600" />
-              История развития департамента
-            </CardTitle>
-            <CardDescription>
-              Ключевые вехи в развитии департамента с 2010 по 2026 год
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
-            <Timeline events={historyEvents} />
-          </CardContent>
-        </Card>
+        <motion.div variants={itemVariants}>
+          <Card className="hover:shadow-xl transition-shadow duration-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-cyan-600" />
+                История развития департамента
+              </CardTitle>
+              <CardDescription>
+                Ключевые вехи в развитии департамента с 2010 по 2026 год
+              </CardDescription>
+            </CardHeader>
+              <CardContent className="pt-6">
+                <Timeline events={historyEvents} />
+              </CardContent>
+            </Card>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
     </>

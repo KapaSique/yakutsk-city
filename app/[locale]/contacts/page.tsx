@@ -1,19 +1,56 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { ContactForm } from "@/components/contact-form";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function ContactsPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 0.5 },
+    },
+  };
+
   return (
     <>
       <Breadcrumb items={[{ label: "Контакты" }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">Контакты</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+          className="text-4xl font-bold text-slate-900 mb-8"
+        >
+          Контакты
+        </motion.h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+        >
           {/* Contact Information */}
-          <Card className="hover:shadow-lg transition-shadow duration-200">
+          <motion.div variants={itemVariants}>
+            <Card className="hover:shadow-xl transition-shadow duration-200 h-full">
             <CardHeader>
               <CardTitle>Контактная информация</CardTitle>
               <CardDescription>
@@ -81,10 +118,12 @@ export default function ContactsPage() {
                 </div>
               </div>
             </CardContent>
-          </Card>
+            </Card>
+          </motion.div>
 
           {/* Departments */}
-          <Card className="hover:shadow-lg transition-shadow duration-200">
+          <motion.div variants={itemVariants}>
+            <Card className="hover:shadow-xl transition-shadow duration-200 h-full">
             <CardHeader>
               <CardTitle>Структурные подразделения</CardTitle>
               <CardDescription>
@@ -185,11 +224,18 @@ export default function ContactsPage() {
                 </div>
               </div>
             </CardContent>
-          </Card>
-        </div>
+            </Card>
+          </motion.div>
+        </motion.div>
 
         {/* Contact Form Section */}
-        <Card className="hover:shadow-lg transition-shadow duration-200 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+        >
+          <Card className="hover:shadow-xl transition-shadow duration-200 mb-12">
           <CardHeader>
             <CardTitle>Форма обратной связи</CardTitle>
             <CardDescription>
@@ -199,10 +245,17 @@ export default function ContactsPage() {
           <CardContent>
             <ContactForm />
           </CardContent>
-        </Card>
+          </Card>
+        </motion.div>
 
         {/* Map placeholder */}
-        <Card className="hover:shadow-lg transition-shadow duration-200">
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.2 }}
+        >
+          <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Расположение на карте</CardTitle>
           </CardHeader>
@@ -219,7 +272,8 @@ export default function ContactsPage() {
               />
             </div>
           </CardContent>
-        </Card>
+          </Card>
+        </motion.div>
       </div>
     </div>
     </>
