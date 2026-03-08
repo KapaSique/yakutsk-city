@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
@@ -8,8 +11,18 @@ export function Footer() {
       {/* Top section with coat of arms */}
       <div className="bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-            <div className="flex-shrink-0">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row items-center md:items-start gap-6"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex-shrink-0"
+            >
               <Image
                 src="/gerb-rf-png.png"
                 alt="Герб Российской Федерации"
@@ -17,7 +30,7 @@ export function Footer() {
                 height={80}
                 className="object-contain"
               />
-            </div>
+            </motion.div>
             <div className="text-center md:text-left">
               <h2 className="text-xl md:text-2xl font-heading font-semibold text-cyan-600 mb-2">
                 Департамент имущественных и земельных отношений
@@ -26,7 +39,7 @@ export function Footer() {
                 Окружной администрации города Якутска
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
