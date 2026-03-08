@@ -356,6 +356,5 @@ vercel
 
 [![Vercel](https://img.shields.io/badge/Powered%20by-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
 
-*Разработано с использованием Claude Opus 4.6*
 
 </div>
