@@ -6,9 +6,41 @@ import { FileText, Users, Building2, Phone } from "lucide-react";
 import Link from "next/link";
 import Stats from "@/components/stats";
 import { motion } from "framer-motion";
+import Script from "next/script";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "name": "Департамент имущественных и земельных отношений Окружной администрации города Якутска",
+  "alternateName": "ДИиЗО Якутск",
+  "url": "https://yakutskcity.ru",
+  "logo": "https://yakutskcity.ru/logo.png",
+  "description": "Управление муниципальным имуществом и земельными участками города Якутска",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "проспект Ленина, дом 15, офис 612",
+    "addressLocality": "Якутск",
+    "addressRegion": "Республика Саха (Якутия)",
+    "postalCode": "677000",
+    "addressCountry": "RU"
+  },
+  "telephone": "+7-4112-40-88-09",
+  "email": "dizo@yakadm.ru",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "areaServed": {
+    "@type": "City",
+    "name": "Якутск"
+  }
+};
 
 export default function Home() {
   return (
+    <>
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div>
       {/* Hero Section */}
       <section className="relative py-32 md:py-40 border-b border-gray-200 overflow-hidden">
@@ -310,5 +342,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }
