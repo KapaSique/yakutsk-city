@@ -1,26 +1,69 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Download, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function DocumentsPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 0.5 },
+    },
+  };
+
   return (
     <>
       <Breadcrumb items={[{ label: "Документы" }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">Документы</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+          className="text-4xl font-bold text-slate-900 mb-8"
+        >
+          Документы
+        </motion.h1>
 
         {/* Search hint */}
-        <div className="mb-8 p-4 bg-gradient-to-r from-cyan-50 to-cyan-100 border border-cyan-200 rounded-xl flex items-center gap-3 shadow-sm">
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.1 }}
+          className="mb-8 p-4 bg-gradient-to-r from-cyan-50 to-cyan-100 border border-cyan-200 rounded-xl flex items-center gap-3 shadow-sm"
+        >
           <Search className="h-5 w-5 text-cyan-600" aria-hidden="true" />
           <p className="text-sm text-slate-700">
             Используйте Ctrl+F для быстрого поиска по документам на странице
           </p>
-        </div>
+        </motion.div>
 
-        {/* Regulations */}
-        <Card className="mb-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-8"
+        >
+          {/* Regulations */}
+          <motion.div variants={itemVariants}>
+            <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Нормативные правовые акты</CardTitle>
             <CardDescription>
@@ -139,9 +182,11 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Federal Laws */}
-        <Card className="mb-8">
+      {/* Federal Laws */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Федеральные законы</CardTitle>
             <CardDescription>
@@ -206,9 +251,11 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Property Lists */}
-        <Card className="mb-8">
+      {/* Property Lists */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Перечни имущества</CardTitle>
             <CardDescription>
@@ -273,9 +320,11 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Administrative Procedures */}
-        <Card className="mb-8">
+      {/* Administrative Procedures */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Административные регламенты</CardTitle>
             <CardDescription>
@@ -340,9 +389,11 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Reports */}
-        <Card className="mb-8">
+      {/* Reports */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Отчеты и аналитика</CardTitle>
             <CardDescription>
@@ -407,9 +458,11 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Forms */}
-        <Card>
+      {/* Forms */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Формы и бланки</CardTitle>
             <CardDescription>
@@ -510,6 +563,8 @@ export default function DocumentsPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
+    </motion.div>
       </div>
     </div>
     </>
