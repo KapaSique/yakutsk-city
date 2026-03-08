@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Search } from "./search";
+import { motion } from "framer-motion";
 
 export function Header() {
   return (
@@ -14,24 +17,34 @@ export function Header() {
         Перейти к основному содержанию
       </a>
 
-      <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-sm shadow-sm">
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+        className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-sm shadow-sm"
+      >
         <div className="container mx-auto px-4">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 rounded-md"
+              className="flex items-center gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 rounded-md group"
             >
-              <Image
-                src="/logo.png"
-                alt="Логотип Департамента"
-                width={48}
-                height={48}
-                className="h-12 w-12 object-contain"
-                priority
-              />
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                <Image
+                  src="/logo.png"
+                  alt="Логотип Департамента"
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 object-contain"
+                  priority
+                />
+              </motion.div>
               <div className="hidden md:block">
-                <div className="text-base font-semibold text-slate-900 leading-tight">
+                <div className="text-base font-semibold text-slate-900 leading-tight group-hover:text-cyan-600 transition-colors">
                   Департамент имущественных
                 </div>
                 <div className="text-sm text-slate-600 leading-tight">
