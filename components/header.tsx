@@ -4,10 +4,13 @@ import { Link } from "@/routing";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Search } from "./search";
+import { LanguageSwitcher } from "./language-switcher";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Header() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("nav");
 
   return (
     <>
@@ -16,7 +19,7 @@ export function Header() {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-cyan-600 focus:text-white focus:rounded-md focus:ring-3 focus:ring-cyan-400"
       >
-        Перейти к основному содержанию
+        {t("skipToMain")}
       </a>
 
       <motion.header
@@ -56,36 +59,38 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8" aria-label="Основная навигация">
+            <nav className="hidden md:flex items-center gap-6" aria-label="Основная навигация">
               <Link
                 href="/about"
                 className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
-                О департаменте
+                {t("about")}
               </Link>
               <Link
                 href="/news"
                 className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
-                Новости
+                {t("news")}
               </Link>
               <Link
                 href="/documents"
                 className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
-                Документы
+                {t("documents")}
               </Link>
               <Link
                 href="/contacts"
                 className="text-sm font-medium text-slate-700 hover:text-cyan-600 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded px-3 py-2"
               >
-                Контакты
+                {t("contacts")}
               </Link>
               <Search />
+              <LanguageSwitcher />
             </nav>
 
             {/* Mobile menu button */}
             <div className="flex items-center gap-2 md:hidden">
+              <LanguageSwitcher />
               <Search />
               <button
                 className="inline-flex items-center justify-center h-10 w-10 rounded-md text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"

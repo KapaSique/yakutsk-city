@@ -7,6 +7,12 @@
     "contacts": "Contacts",
     "skipToMain": "Skip to main content"
   },
+  "languages": {
+    "ru": "Russian",
+    "sah": "Sakha",
+    "en": "English",
+    "switchLanguage": "Switch language"
+  },
   "home": {
     "title": "Department of Property and Land Relations",
     "subtitle": "Yakutsk City District Administration. Management of municipal property and land plots.",

@@ -429,7 +429,6 @@ export default function ServicesPage() {
                 <Link href="/contacts">Контакты департамента</Link>
               </Button>
             </div>
-            </div>
           </CardContent>
         </Card>
       </motion.div>
