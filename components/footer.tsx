@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function Footer() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <footer className="border-t-2 border-cyan-500 bg-slate-50">
       {/* Top section with coat of arms */}
@@ -15,12 +17,12 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
             className="flex flex-col md:flex-row items-center md:items-start gap-6"
           >
             <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={shouldReduceMotion ? {} : { scale: 1.05, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="flex-shrink-0"
             >
               <Image

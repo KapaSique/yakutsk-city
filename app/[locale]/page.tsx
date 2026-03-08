@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Users, Building2, Phone } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { FileText, Users, Building2, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Stats from "@/components/stats";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Script from "next/script";
 
 const jsonLd = {
@@ -34,6 +35,28 @@ const jsonLd = {
 };
 
 export default function Home() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.1,
+        delayChildren: shouldReduceMotion ? 0 : 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 0.5 },
+    },
+  };
+
   return (
     <>
       <Script
@@ -66,21 +89,25 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-6"
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+              className="mb-6 flex flex-wrap gap-3"
             >
-              <span className="text-sm font-medium text-cyan-300 uppercase tracking-wider inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 backdrop-blur-sm rounded-full border border-cyan-400/20 shadow-lg shadow-cyan-500/10">
+              <Badge className="text-sm font-medium text-cyan-300 uppercase tracking-wider inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 backdrop-blur-sm rounded-full border border-cyan-400/20 shadow-lg shadow-cyan-500/10 hover:bg-cyan-500/20 transition-all duration-200">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                 </span>
                 Окружная администрация города Якутска
-              </span>
+              </Badge>
+              <Badge variant="outline" className="text-sm font-medium text-white border-white/30 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-200">
+                <CheckCircle2 className="h-3 w-3 mr-1" />
+                Официальный сайт
+              </Badge>
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.2 }}
               className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight"
             >
               Департамент имущественных и земельных отношений
@@ -88,7 +115,7 @@ export default function Home() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.4 }}
               className="text-xl md:text-2xl text-gray-100 mb-12 leading-relaxed max-w-3xl"
             >
               Управление муниципальным имуществом и земельными участками города Якутска
@@ -96,16 +123,27 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.6 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 border-0">
-                  <Link href="/about">О департаменте</Link>
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -2 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button asChild size="lg" className="group bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-200 border-0">
+                  <Link href="/about" className="inline-flex items-center gap-2">
+                    О департаменте
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  </Link>
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button asChild variant="secondary" size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm transition-all duration-300">
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -2 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button asChild variant="secondary" size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm transition-all duration-200">
                   <Link href="/contacts">Контакты</Link>
                 </Button>
               </motion.div>
@@ -121,125 +159,131 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
             className="mb-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Основные разделы</h2>
             <p className="text-lg text-slate-600">Быстрый доступ к важной информации</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0 }}
-            >
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            <motion.div variants={itemVariants}>
               <Link href="/documents" className="group block h-full">
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-cyan-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardHeader className="pb-4 relative">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                      className="mb-4 p-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl w-fit shadow-lg shadow-cyan-500/30 group-hover:shadow-cyan-500/50 transition-shadow"
-                    >
-                      <FileText className="h-8 w-8 text-white" aria-hidden="true" />
-                    </motion.div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-cyan-600 transition-colors">
-                      Документы
-                    </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      Нормативные акты и регламенты
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="h-full hover:shadow-2xl transition-all duration-200 cursor-pointer border border-slate-200 hover:border-cyan-500/50 bg-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                    <CardHeader className="pb-4 relative">
+                      <motion.div
+                        whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        className="mb-4 p-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl w-fit shadow-lg shadow-cyan-500/30 group-hover:shadow-cyan-500/50 transition-shadow duration-200"
+                      >
+                        <FileText className="h-8 w-8 text-white" aria-hidden="true" />
+                      </motion.div>
+                      <CardTitle className="text-xl mb-2 group-hover:text-cyan-600 transition-colors duration-200">
+                        Документы
+                      </CardTitle>
+                      <CardDescription className="text-base leading-relaxed">
+                        Нормативные акты и регламенты
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            <motion.div variants={itemVariants}>
               <Link href="/about#staff" className="group block h-full">
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-indigo-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardHeader className="pb-4 relative">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                      className="mb-4 p-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl w-fit shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-shadow"
-                    >
-                      <Users className="h-8 w-8 text-white" aria-hidden="true" />
-                    </motion.div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-indigo-600 transition-colors">
-                      Руководство
-                    </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      Структура и сотрудники департамента
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="h-full hover:shadow-2xl transition-all duration-200 cursor-pointer border border-slate-200 hover:border-indigo-500/50 bg-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                    <CardHeader className="pb-4 relative">
+                      <motion.div
+                        whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        className="mb-4 p-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl w-fit shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-shadow duration-200"
+                      >
+                        <Users className="h-8 w-8 text-white" aria-hidden="true" />
+                      </motion.div>
+                      <CardTitle className="text-xl mb-2 group-hover:text-indigo-600 transition-colors duration-200">
+                        Руководство
+                      </CardTitle>
+                      <CardDescription className="text-base leading-relaxed">
+                        Структура и сотрудники департамента
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <motion.div variants={itemVariants}>
               <Link href="/services" className="group block h-full">
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-emerald-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardHeader className="pb-4 relative">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                      className="mb-4 p-4 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl w-fit shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-shadow"
-                    >
-                      <Building2 className="h-8 w-8 text-white" aria-hidden="true" />
-                    </motion.div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-emerald-600 transition-colors">
-                      Услуги
-                    </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      Муниципальные услуги и регламенты
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="h-full hover:shadow-2xl transition-all duration-200 cursor-pointer border border-slate-200 hover:border-emerald-500/50 bg-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                    <CardHeader className="pb-4 relative">
+                      <motion.div
+                        whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        className="mb-4 p-4 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl w-fit shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-shadow duration-200"
+                      >
+                        <Building2 className="h-8 w-8 text-white" aria-hidden="true" />
+                      </motion.div>
+                      <CardTitle className="text-xl mb-2 group-hover:text-emerald-600 transition-colors duration-200">
+                        Услуги
+                      </CardTitle>
+                      <CardDescription className="text-base leading-relaxed">
+                        Муниципальные услуги и регламенты
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
+            <motion.div variants={itemVariants}>
               <Link href="/contacts" className="group block h-full">
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-violet-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardHeader className="pb-4 relative">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                      className="mb-4 p-4 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl w-fit shadow-lg shadow-violet-500/30 group-hover:shadow-violet-500/50 transition-shadow"
-                    >
-                      <Phone className="h-8 w-8 text-white" aria-hidden="true" />
-                    </motion.div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-violet-600 transition-colors">
-                      Контакты
-                    </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      Адрес, телефоны, режим работы
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                <motion.div
+                  whileHover={shouldReduceMotion ? {} : { y: -8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="h-full hover:shadow-2xl transition-all duration-200 cursor-pointer border border-slate-200 hover:border-violet-500/50 bg-white relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                    <CardHeader className="pb-4 relative">
+                      <motion.div
+                        whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        className="mb-4 p-4 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl w-fit shadow-lg shadow-violet-500/30 group-hover:shadow-violet-500/50 transition-shadow duration-200"
+                      >
+                        <Phone className="h-8 w-8 text-white" aria-hidden="true" />
+                      </motion.div>
+                      <CardTitle className="text-xl mb-2 group-hover:text-violet-600 transition-colors duration-200">
+                        Контакты
+                      </CardTitle>
+                      <CardDescription className="text-base leading-relaxed">
+                        Адрес, телефоны, режим работы
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
               </Link>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -266,7 +310,7 @@ export default function Home() {
               <p className="text-lg text-slate-300">Мы готовы ответить на ваши вопросы</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {[
+{[
                 { title: "Адрес", content: "677000, Республика Саха (Якутия), г. Якутск, пр. Ленина, д. 15, офис 612" },
                 { title: "Телефон", content: "8 (4112) 40-88-09", link: "tel:+74112408809" },
                 { title: "Режим работы", content: "Пн-Пт 09:00-18:00\nОбед 13:00-14:00" }
@@ -276,12 +320,13 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center md:text-left bg-slate-800/50 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10"
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : index * 0.1 }}
+                  whileHover={shouldReduceMotion ? {} : { y: -4 }}
+                  className="text-center md:text-left bg-slate-800/50 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-200 hover:shadow-xl hover:shadow-cyan-500/10 cursor-default"
                 >
                   <h3 className="font-semibold text-cyan-400 mb-3 text-lg">{item.title}</h3>
                   {item.link ? (
-                    <a href={item.link} className="text-slate-300 hover:text-cyan-300 hover:underline font-medium transition-colors">
+                    <a href={item.link} className="text-slate-300 hover:text-cyan-300 hover:underline font-medium transition-colors duration-200 cursor-pointer">
                       {item.content}
                     </a>
                   ) : (
@@ -292,16 +337,25 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-            <motion.div
+<motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.4 }}
               className="text-center"
             >
-              <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
-                <Link href="/contacts">Подробная информация</Link>
-              </Button>
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -2 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button asChild size="lg" className="group bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-200">
+                  <Link href="/contacts" className="inline-flex items-center gap-2">
+                    Подробная информация
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  </Link>
+                </Button>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

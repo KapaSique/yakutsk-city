@@ -1,12 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/routing";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Search } from "./search";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function Header() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <>
       {/* Skip to main content link for accessibility */}
@@ -18,9 +20,9 @@ export function Header() {
       </a>
 
       <motion.header
-        initial={{ y: -100 }}
+        initial={{ y: shouldReduceMotion ? 0 : -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.6, type: shouldReduceMotion ? "tween" : "spring", stiffness: 100 }}
         className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-sm shadow-sm"
       >
         <div className="container mx-auto px-4">
@@ -31,8 +33,8 @@ export function Header() {
               className="flex items-center gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 rounded-md group"
             >
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
+                whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
                 <Image
                   src="/logo.png"
