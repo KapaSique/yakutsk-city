@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -5,17 +7,53 @@ import Link from "next/link";
 import { FileText, Clock, Wallet, AlertCircle, Download } from "lucide-react";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { FAQ } from "@/components/faq";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function ServicesPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: shouldReduceMotion ? 0 : 0.5 },
+    },
+  };
+
   return (
     <>
       <Breadcrumb items={[{ label: "Муниципальные услуги" }]} />
       <div className="py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-slate-900 mb-8">Муниципальные услуги</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
+          className="text-4xl font-bold text-slate-900 mb-8"
+        >
+          Муниципальные услуги
+        </motion.h1>
 
-        {/* Service 1: Property Support for SME */}
-        <Card className="mb-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-8"
+        >
+          {/* Service 1: Property Support for SME */}
+          <motion.div variants={itemVariants}>
+            <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Имущественная поддержка субъектов МСП</CardTitle>
             <CardDescription>
@@ -157,9 +195,11 @@ export default function ServicesPage() {
             </div>
           </CardContent>
         </Card>
+      </motion.div>
 
-        {/* Service 2: Land Plots */}
-        <Card className="mb-8">
+      {/* Service 2: Land Plots */}
+      <motion.div variants={itemVariants}>
+        <Card className="hover:shadow-xl transition-shadow duration-200">
           <CardHeader>
             <CardTitle>Предоставление земельных участков</CardTitle>
             <CardDescription>
@@ -389,11 +429,20 @@ export default function ServicesPage() {
                 <Link href="/contacts">Контакты департамента</Link>
               </Button>
             </div>
+            </div>
           </CardContent>
         </Card>
+      </motion.div>
+    </motion.div>
 
         {/* FAQ Section */}
-        <div className="mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.2 }}
+          className="mt-16"
+        >
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Часто задаваемые вопросы</h2>
           <p className="text-slate-600 mb-8">
             Ответы на наиболее распространенные вопросы о муниципальных услугах и управлении имуществом
@@ -431,7 +480,7 @@ export default function ServicesPage() {
               }
             ]}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
     </>
