@@ -87,44 +87,117 @@ export default function Home() {
             <p className="text-lg text-slate-600">Быстрый доступ к важной информации</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { href: "/documents", icon: FileText, title: "Документы", desc: "Нормативные акты и регламенты", color: "cyan" },
-              { href: "/about#staff", icon: Users, title: "Руководство", desc: "Структура и сотрудники департамента", color: "indigo" },
-              { href: "/services", icon: Building2, title: "Услуги", desc: "Муниципальные услуги и регламенты", color: "emerald" },
-              { href: "/contacts", icon: Phone, title: "Контакты", desc: "Адрес, телефоны, режим работы", color: "violet" }
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Link href={item.href} className="group block h-full">
-                    <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-${item.color}-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-${item.color}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <CardHeader className="pb-4 relative">
-                        <motion.div
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ type: "spring", stiffness: 400 }}
-                          className={`mb-4 p-4 bg-gradient-to-br from-${item.color}-500 to-${item.color}-600 rounded-2xl w-fit shadow-lg shadow-${item.color}-500/30 group-hover:shadow-${item.color}-500/50 transition-shadow`}
-                        >
-                          <Icon className="h-8 w-8 text-white" aria-hidden="true" />
-                        </motion.div>
-                        <CardTitle className={`text-xl mb-2 group-hover:text-${item.color}-600 transition-colors`}>
-                          {item.title}
-                        </CardTitle>
-                        <CardDescription className="text-base leading-relaxed">
-                          {item.desc}
-                        </CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </Link>
-                </motion.div>
-              );
-            })}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
+              <Link href="/documents" className="group block h-full">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-cyan-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardHeader className="pb-4 relative">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                      className="mb-4 p-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl w-fit shadow-lg shadow-cyan-500/30 group-hover:shadow-cyan-500/50 transition-shadow"
+                    >
+                      <FileText className="h-8 w-8 text-white" aria-hidden="true" />
+                    </motion.div>
+                    <CardTitle className="text-xl mb-2 group-hover:text-cyan-600 transition-colors">
+                      Документы
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      Нормативные акты и регламенты
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Link href="/about#staff" className="group block h-full">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-indigo-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardHeader className="pb-4 relative">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                      className="mb-4 p-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl w-fit shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-shadow"
+                    >
+                      <Users className="h-8 w-8 text-white" aria-hidden="true" />
+                    </motion.div>
+                    <CardTitle className="text-xl mb-2 group-hover:text-indigo-600 transition-colors">
+                      Руководство
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      Структура и сотрудники департамента
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Link href="/services" className="group block h-full">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-emerald-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardHeader className="pb-4 relative">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                      className="mb-4 p-4 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl w-fit shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-shadow"
+                    >
+                      <Building2 className="h-8 w-8 text-white" aria-hidden="true" />
+                    </motion.div>
+                    <CardTitle className="text-xl mb-2 group-hover:text-emerald-600 transition-colors">
+                      Услуги
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      Муниципальные услуги и регламенты
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Link href="/contacts" className="group block h-full">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-violet-500/50 hover:-translate-y-2 bg-white relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardHeader className="pb-4 relative">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                      className="mb-4 p-4 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl w-fit shadow-lg shadow-violet-500/30 group-hover:shadow-violet-500/50 transition-shadow"
+                    >
+                      <Phone className="h-8 w-8 text-white" aria-hidden="true" />
+                    </motion.div>
+                    <CardTitle className="text-xl mb-2 group-hover:text-violet-600 transition-colors">
+                      Контакты
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      Адрес, телефоны, режим работы
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
